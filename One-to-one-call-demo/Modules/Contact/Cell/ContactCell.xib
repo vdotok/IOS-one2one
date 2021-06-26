@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="73" id="RT6-pw-wih" customClass="ContactCell" customModule="One_to_one_call_demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RT6-pw-wih" id="vRI-Dk-d6w">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="731-lU-OFQ">
+                        <rect key="frame" x="16" y="12" width="133" height="24"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="yuB-LZ-n9m">
+                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jason Bailey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-sp-eq3">
+                                <rect key="frame" x="38" y="0.0" width="95" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0W2-ZM-a5E">
+                        <rect key="frame" x="204" y="4" width="92" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zS-2o-sQN">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8r9-q3-lUr"/>
+                                    <constraint firstAttribute="width" constant="40" id="DYC-6K-FJa"/>
+                                </constraints>
+                                <state key="normal" image="phone-receiver"/>
+                                <connections>
+                                    <action selector="didTapAudio:" destination="RT6-pw-wih" eventType="touchUpInside" id="top-X0-ZIh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MD4-Tg-4aG">
+                                <rect key="frame" x="52" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3bl-Ag-bTS"/>
+                                    <constraint firstAttribute="width" constant="40" id="7RB-Vx-VG2"/>
+                                </constraints>
+                                <state key="normal" image="videoCall"/>
+                                <connections>
+                                    <action selector="didTapVideo:" destination="RT6-pw-wih" eventType="touchUpInside" id="Gtu-2x-MQz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-MZ-0TL">
+                        <rect key="frame" x="16" y="52" width="288" height="1"/>
+                        <color key="backgroundColor" name="AppDarkGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="9Q0-Dv-rN7"/>
+                            <constraint firstAttribute="height" constant="1" id="sbG-fX-ExV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dpP-MZ-0TL" secondAttribute="bottom" priority="250" constant="23" id="LrY-ZF-cjv"/>
+                    <constraint firstItem="dpP-MZ-0TL" firstAttribute="leading" secondItem="vRI-Dk-d6w" secondAttribute="leading" constant="16" id="RNZ-EV-SAh"/>
+                    <constraint firstItem="dpP-MZ-0TL" firstAttribute="centerX" secondItem="vRI-Dk-d6w" secondAttribute="centerX" id="Tgw-SR-SHh"/>
+                    <constraint firstAttribute="trailing" secondItem="0W2-ZM-a5E" secondAttribute="trailing" constant="24" id="Zrb-8B-qeT"/>
+                    <constraint firstItem="731-lU-OFQ" firstAttribute="leading" secondItem="vRI-Dk-d6w" secondAttribute="leading" constant="16" id="bp6-6x-8F2"/>
+                    <constraint firstItem="731-lU-OFQ" firstAttribute="top" secondItem="vRI-Dk-d6w" secondAttribute="top" constant="12" id="ilc-Jr-BLg"/>
+                    <constraint firstItem="0W2-ZM-a5E" firstAttribute="centerY" secondItem="731-lU-OFQ" secondAttribute="centerY" id="nKu-jL-bYE"/>
+                    <constraint firstItem="dpP-MZ-0TL" firstAttribute="top" secondItem="731-lU-OFQ" secondAttribute="bottom" constant="16" id="wdl-Yf-65T"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="eSN-JB-GKP"/>
+            <connections>
+                <outlet property="userName" destination="aSs-sp-eq3" id="W7o-AH-qck"/>
+            </connections>
+            <point key="canvasLocation" x="40.579710144927539" y="65.959821428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="User" width="24" height="24"/>
+        <image name="phone-receiver" width="20" height="20"/>
+        <image name="videoCall" width="23.5" height="14"/>
+        <namedColor name="AppDarkGreenColor">
+            <color red="0.396078431372549" green="0.60784313725490191" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+        <array key="Manrope-Bold.ttf">
+            <string>Manrope-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VideoDailingView" customModule="One_to_one_call_demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-Ax-xNB">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="efB-Z6-V7O">
+                    <rect key="frame" x="162.5" y="98.5" width="50" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-4M-XfB">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" name="Manrope-Bold" family="Manrope" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-hS-PwE">
+                            <rect key="frame" x="0.0" y="50" width="50" height="50"/>
+                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SWh-Ol-baD">
+                    <rect key="frame" x="20" y="28" width="176" height="70.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are video Call with " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH5-13-ds7">
+                            <rect key="frame" x="0.0" y="0.0" width="176" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSG-Qn-Iqg">
+                            <rect key="frame" x="0.0" y="20.5" width="176" height="50"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-IP-on6">
+                    <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-Bs-964">
+                    <rect key="frame" x="305" y="45" width="50" height="174"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4o-hc-3QZ">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROQ-mf-Rq6">
+                            <rect key="frame" x="0.0" y="80" width="50" height="32"/>
+                            <state key="normal" image="noun_Switch"/>
+                            <connections>
+                                <action selector="didTapFlip:" destination="iN0-l3-epB" eventType="touchUpInside" id="xSx-c7-EIJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCS-xH-U1w">
+                            <rect key="frame" x="0.0" y="142" width="50" height="32"/>
+                            <state key="normal" image="Volume Off"/>
+                            <state key="selected" image="Volumn On"/>
+                            <connections>
+                                <action selector="didTapSpeaker:" destination="iN0-l3-epB" eventType="touchUpInside" id="Rgm-yH-U9O"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ocv-my-4lE">
+                    <rect key="frame" x="77.5" y="579" width="220" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-Gm-3mV">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <state key="normal" image="StopVideo"/>
+                            <state key="selected" image="video"/>
+                            <connections>
+                                <action selector="didTapVideo:" destination="iN0-l3-epB" eventType="touchUpInside" id="bb9-MJ-J9P"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMt-ta-VfH">
+                            <rect key="frame" x="80" y="0.0" width="60" height="60"/>
+                            <state key="normal" image="end"/>
+                            <connections>
+                                <action selector="didTapEnd:" destination="iN0-l3-epB" eventType="touchUpInside" id="Wn0-nR-3WT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60w-gI-bVR">
+                            <rect key="frame" x="160" y="0.0" width="60" height="60"/>
+                            <state key="normal" image="mute"/>
+                            <state key="selected" image="Unmute"/>
+                            <connections>
+                                <action selector="didTapMute:" destination="iN0-l3-epB" eventType="touchUpInside" id="0jS-0q-b0F"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jf1-st-Nix" customClass="DraggableView" customModule="One_to_one_call_demo" customModuleProvider="target">
+                    <rect key="frame" x="210" y="381" width="130" height="170"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Jsc-IP-on6" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="5WQ-o7-jYG"/>
+                <constraint firstItem="Jsc-IP-on6" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="9U1-Kt-ADx"/>
+                <constraint firstItem="SXs-Ax-xNB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9g4-tG-GsZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Rq1-Bs-964" secondAttribute="trailing" constant="20" id="AkE-Wn-Cdo"/>
+                <constraint firstItem="ocv-my-4lE" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="DHn-db-9hC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ocv-my-4lE" secondAttribute="bottom" constant="28" id="DyJ-Kd-e1z"/>
+                <constraint firstItem="SWh-Ol-baD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="FYP-zm-2NT"/>
+                <constraint firstAttribute="bottom" secondItem="SXs-Ax-xNB" secondAttribute="bottom" id="O3H-k9-EKy"/>
+                <constraint firstItem="Rq1-Bs-964" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="45" id="PDf-L4-FlP"/>
+                <constraint firstItem="SWh-Ol-baD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="28" id="Ud0-6G-aeP"/>
+                <constraint firstItem="efB-Z6-V7O" firstAttribute="top" secondItem="SWh-Ol-baD" secondAttribute="bottom" id="daY-bn-ZLl"/>
+                <constraint firstItem="SXs-Ax-xNB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="j3L-i6-GwW"/>
+                <constraint firstItem="efB-Z6-V7O" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pud-j0-hTO"/>
+                <constraint firstItem="SXs-Ax-xNB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vGt-lc-wYW"/>
+            </constraints>
+            <connections>
+                <outlet property="callState" destination="LHH-hS-PwE" id="wLs-23-McU"/>
+                <outlet property="cameraButton" destination="ROQ-mf-Rq6" id="o8x-P1-h7N"/>
+                <outlet property="connectedStack" destination="SWh-Ol-baD" id="nfk-KV-ytQ"/>
+                <outlet property="connectedUserName" destination="xSG-Qn-Iqg" id="fHD-5K-omP"/>
+                <outlet property="localView" destination="Jf1-st-Nix" id="wYL-Gw-mFL"/>
+                <outlet property="personAvatar" destination="Jsc-IP-on6" id="KyN-P6-FUG"/>
+                <outlet property="remoteView" destination="SXs-Ax-xNB" id="h7a-rb-hq0"/>
+                <outlet property="speakerButton" destination="TCS-xH-U1w" id="CJD-nt-CSO"/>
+                <outlet property="timeLabel" destination="A4o-hc-3QZ" id="IAC-0W-auN"/>
+                <outlet property="tryingStack" destination="efB-Z6-V7O" id="F1m-7x-w15"/>
+                <outlet property="tryingUserName" destination="fb9-4M-XfB" id="TMB-z0-EGg"/>
+            </connections>
+            <point key="canvasLocation" x="-217.39130434782609" y="44.866071428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="StopVideo" width="60" height="60"/>
+        <image name="Unmute" width="60" height="60"/>
+        <image name="Volume Off" width="32" height="32"/>
+        <image name="Volumn On" width="32" height="32"/>
+        <image name="end" width="60" height="60"/>
+        <image name="mute" width="60" height="60"/>
+        <image name="noun" width="100" height="100"/>
+        <image name="noun_Switch" width="32" height="32"/>
+        <image name="video" width="60" height="60"/>
+    </resources>
+</document>
