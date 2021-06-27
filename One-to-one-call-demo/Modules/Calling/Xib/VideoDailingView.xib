@@ -117,7 +117,7 @@
                         </button>
                     </subviews>
                 </stackView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jf1-st-Nix" customClass="DraggableView" customModule="One_to_one_call_demo" customModuleProvider="target">
+                <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jf1-st-Nix" customClass="DraggableView" customModule="One_to_one_call_demo" customModuleProvider="target">
                     <rect key="frame" x="210" y="381" width="130" height="170"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
