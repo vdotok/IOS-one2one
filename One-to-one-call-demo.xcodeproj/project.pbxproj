@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18BBB01B2680C65200F20275 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBB01A2680C65200F20275 /* DraggableView.swift */; };
 		18D01BC6268496E000DE549A /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D01BC5268496E000DE549A /* Swift+Extensions.swift */; };
-		5D056B8A267094660044C6A9 /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA3F4EF13FA9219A4B9CA8A /* Pods_One_to_one_call_demo.framework */; };
 		5D09DFF9266FC48400867722 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D09DFF8266FC48400867722 /* Colors.xcassets */; };
 		5D09DFFE266FC77100867722 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09DFFD266FC77100867722 /* ProgressHud.swift */; };
 		5D09E001266FC7CB00867722 /* ValidateUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */; };
@@ -60,6 +59,9 @@
 		5D09E085266FFE4100867722 /* AllUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E084266FFE4100867722 /* AllUsersService.swift */; };
 		5D09E08A2670031500867722 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E0882670031500867722 /* ContactCell.swift */; };
 		5D09E08B2670031500867722 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D09E0892670031500867722 /* ContactCell.xib */; };
+		5D2929D62688E6E00012526D /* iOSSDKStreaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2929D52688E6D60012526D /* iOSSDKStreaming.framework */; };
+		5D2929D72688E6E00012526D /* iOSSDKStreaming.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2929D52688E6D60012526D /* iOSSDKStreaming.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D2929D82688E6E30012526D /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA3F4EF13FA9219A4B9CA8A /* Pods_One_to_one_call_demo.framework */; };
 		5D55E90C2670900100235593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55E90B2670900100235593 /* Constants.swift */; };
 		5D87EF1F26807E8000B9DA36 /* iphone_11_pro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */; };
 		5D87EF2126807ECC00B9DA36 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D87EF2026807ECC00B9DA36 /* Sound.swift */; };
@@ -99,14 +101,12 @@
 		5DE554C32670A5080025B081 /* VideoDailingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE554C22670A5080025B081 /* VideoDailingView.swift */; };
 		5DE554CA2670B3C80025B081 /* IncomingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE554C92670B3C80025B081 /* IncomingCall.swift */; };
 		5DE554CC2670B3E00025B081 /* IncomingCall.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DE554CB2670B3E00025B081 /* IncomingCall.xib */; };
-		5DE686DF2688B32B0010A4D1 /* iOSSDKStreaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE686DE2688B3070010A4D1 /* iOSSDKStreaming.framework */; };
-		5DE686E02688B32B0010A4D1 /* iOSSDKStreaming.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE686DE2688B3070010A4D1 /* iOSSDKStreaming.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5DE686DD2688B3070010A4D1 /* PBXContainerItemProxy */ = {
+		5D2929D42688E6D60012526D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5DE686D92688B3070010A4D1 /* iOSSDKStreaming.xcodeproj */;
+			containerPortal = 5D2929D02688E6D60012526D /* iOSSDKStreaming.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5D146FA225DE4823000852FB;
 			remoteInfo = iOSSDKStreaming;
@@ -120,7 +120,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5DE686E02688B32B0010A4D1 /* iOSSDKStreaming.framework in Embed Frameworks */,
+				5D2929D72688E6E00012526D /* iOSSDKStreaming.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +181,7 @@
 		5D09E084266FFE4100867722 /* AllUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersService.swift; sourceTree = "<group>"; };
 		5D09E0882670031500867722 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		5D09E0892670031500867722 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		5D2929D02688E6D60012526D /* iOSSDKStreaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSSDKStreaming.xcodeproj; path = "../../../ios-sdk-streaming/iOSSDKStreaming.xcodeproj"; sourceTree = "<group>"; };
 		5D55E90B2670900100235593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone_11_pro.mp3; sourceTree = "<group>"; };
 		5D87EF2026807ECC00B9DA36 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -222,7 +223,6 @@
 		5DE554C22670A5080025B081 /* VideoDailingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDailingView.swift; sourceTree = "<group>"; };
 		5DE554C92670B3C80025B081 /* IncomingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCall.swift; sourceTree = "<group>"; };
 		5DE554CB2670B3E00025B081 /* IncomingCall.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingCall.xib; sourceTree = "<group>"; };
-		5DE686D92688B3070010A4D1 /* iOSSDKStreaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSSDKStreaming.xcodeproj; path = "../../../../Norgic/ios-sdk-streaming/iOSSDKStreaming.xcodeproj"; sourceTree = "<group>"; };
 		70480CB792C005CC537C1DA3 /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
 		A4F15378589274DF433D1B37 /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,8 +232,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DE686DF2688B32B0010A4D1 /* iOSSDKStreaming.framework in Frameworks */,
-				5D056B8A267094660044C6A9 /* Pods_One_to_one_call_demo.framework in Frameworks */,
+				5D2929D82688E6E30012526D /* Pods_One_to_one_call_demo.framework in Frameworks */,
+				5D2929D62688E6E00012526D /* iOSSDKStreaming.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +363,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		5D2929D12688E6D60012526D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D2929D52688E6D60012526D /* iOSSDKStreaming.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D48BF4A2688DEDE00278EAB /* Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				5D2929D02688E6D60012526D /* iOSSDKStreaming.xcodeproj */,
+			);
+			path = Streaming;
+			sourceTree = "<group>";
+		};
 		5D48FEE826700DD200008D35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,8 +408,8 @@
 		5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */ = {
 			isa = PBXGroup;
 			children = (
+				5D48BF4A2688DEDE00278EAB /* Streaming */,
 				5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */,
-				5DE686D92688B3070010A4D1 /* iOSSDKStreaming.xcodeproj */,
 				5DBBF787266FC25C0086ED93 /* Translation */,
 				5DBBF782266FC2280086ED93 /* Model */,
 				5DBBF772266FC1710086ED93 /* Service */,
@@ -552,14 +568,6 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
-		5DE686DA2688B3070010A4D1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5DE686DE2688B3070010A4D1 /* iOSSDKStreaming.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -611,8 +619,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5DE686DA2688B3070010A4D1 /* Products */;
-					ProjectRef = 5DE686D92688B3070010A4D1 /* iOSSDKStreaming.xcodeproj */;
+					ProductGroup = 5D2929D12688E6D60012526D /* Products */;
+					ProjectRef = 5D2929D02688E6D60012526D /* iOSSDKStreaming.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -623,11 +631,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5DE686DE2688B3070010A4D1 /* iOSSDKStreaming.framework */ = {
+		5D2929D52688E6D60012526D /* iOSSDKStreaming.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = iOSSDKStreaming.framework;
-			remoteRef = 5DE686DD2688B3070010A4D1 /* PBXContainerItemProxy */;
+			remoteRef = 5D2929D42688E6D60012526D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
