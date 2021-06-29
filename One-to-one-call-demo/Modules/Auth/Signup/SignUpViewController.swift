@@ -104,6 +104,15 @@ extension SignUpViewController: UITextFieldDelegate {
         if range.location == 0 && string == " " {
             return false
         }
+        if textField == userName {
+            if text.count > 20 {
+                return false
+            }
+        } else if textField == password {
+            if text.count > 14 {
+                return false
+            }
+        }
         return true
     }
 }
