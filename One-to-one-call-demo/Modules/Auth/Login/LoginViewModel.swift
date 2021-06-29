@@ -59,7 +59,7 @@ extension LoginViewModelImpl {
             return
         }
         if password.count > 14 || password.count < 8 {
-            output?(.failure(message: "Password should be between 4 and 20."))
+            output?(.failure(message: "Password should be between 8 and 14."))
             return
         }
         self.output?(.showProgress)
