@@ -41,6 +41,7 @@ class VideoDailingView: UIView {
         sender.isSelected = !sender.isSelected
         guard let baseSession = session else {return }
         localView.isHidden = sender.isSelected ? true : false
+        cameraButton.isEnabled = sender.isSelected ? false : true
         delegate?.didTapVideo(for: baseSession, state: sender.isSelected ? .videoDisabled :.videoEnabled )
     }
     
