@@ -56,4 +56,5 @@ DerivedData/
 *.xccheckout
 Pods/
 Podfile.lock
+One-to-one-call/Streaming
 

@@ -59,6 +59,14 @@ extension SignUpViewModelImpl {
              output?(.failure(message: "Internet appears to be offline"))
              return
          }
+        if userName.count > 20 || userName.count < 4 {
+            output?(.failure(message: "Username should be between 4 and 20."))
+            return
+        }
+        if password.count > 14 || password.count < 8 {
+            output?(.failure(message: "Password should be between 8 and 14."))
+            return
+        }
         self.output?(.showProgress)
         let request = SignupRequest(fullName: name, email: email, password: password)
         signupStore.registerUser(with: request) { (response) in
