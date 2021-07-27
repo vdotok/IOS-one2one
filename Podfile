@@ -6,9 +6,8 @@ target 'One-to-one-call-demo' do
   use_frameworks!
 
   # Pods for One-to-one-call-demo
-pod 'KRProgressHUD'
-  pod 'SocketRocket'
+  pod 'KRProgressHUD'
   pod 'IQKeyboardManagerSwift'
-pod 'GoogleWebRTC'
+  pod 'VdoTokStreaming'
 
 end

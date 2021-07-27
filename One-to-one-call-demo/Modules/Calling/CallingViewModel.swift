@@ -239,6 +239,9 @@ extension CallingViewModelImpl {
 //}
 
 extension CallingViewModelImpl: SessionDelegate {
+    func didGetPublicUrl(for session: VTokBaseSession, with url: String) {
+    }
+    
     func configureLocalViewFor(session: VTokBaseSession, renderer: UIView) {
         output?(.updateLocalView(session: session, view: renderer))
     }
@@ -260,8 +263,6 @@ extension CallingViewModelImpl: SessionDelegate {
                 break
             case .videoCall:
                 output?(.update(Session: session))
-                break
-            case .screenshare:
                 break
             }
         case .rejected:
