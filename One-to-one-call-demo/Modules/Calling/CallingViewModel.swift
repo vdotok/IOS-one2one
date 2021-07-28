@@ -129,115 +129,6 @@ extension CallingViewModelImpl {
     
 }
 
-//extension CallingViewModelImpl: SessionDelegate {
-//    func sessionDidConnnect(session: VTokBaseSession) {
-//        stopSound()
-//        switch session.sessionMediaType {
-//        case .audioCall:
-//            output?(.udapteAudio(baseSession: session))
-//            break
-//        case .videoCall:
-//            output?(.update(Session: session))
-//            break
-//        case .screenshare:
-//            break
-//        }
-//
-//    }
-//
-//    func sessionDidFail(session: VTokBaseSession, error: Error) {
-//
-//    }
-//
-//    func sessionDidDisconnect(session: VTokBaseSession, error: Error?) {
-//
-//    }
-//
-//    func sessionWasRejected(session: VTokBaseSession, message: String) {
-//        output?(.dismissCallView)
-//        stopSound()
-//    }
-//
-//    func userBusyFor(session: VTokBaseSession, message: String) {
-//
-//        output?(.update(Session: session))
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { [weak self] in
-//            self?.output?(.dismissCallView)
-//        })
-//    }
-//
-//    func sessionDidHangUp(session: VTokBaseSession, message: String) {
-//        DispatchQueue.main.async {[weak self] in
-//
-//            self?.output?(.dismissCallView)
-//        }
-//
-//    }
-//
-//    func configureLocalViewFor(session: VTokBaseSession, renderer: UIView) {
-//        output?(.updateLocalView(session: session, view: renderer))
-//    }
-//
-//    func configureRemoteFor(session: VTokBaseSession, renderer: UIView) {
-//        output?(.updateRemoteView(session: session, view: renderer))
-//    }
-//
-//    func configureRemoteViews(for streams: [UserStream]) {
-//
-//    }
-//
-//
-//    func remoteParticipantDidRemove() {
-//
-//    }
-//
-//    func handle(stateInformation: StateInformation, for session: VTokBaseSession) {
-//        switch session.sessionMediaType {
-//        case .audioCall:
-//            break
-//        case .videoCall:
-//            output?(.updateState(information: stateInformation))
-//        default:
-//            break
-//        }
-//    }
-//
-//    func sessionTryingToConnect(session: VTokBaseSession) {
-//
-//        switch session.sessionMediaType {
-//        case .audioCall:
-//            output?(.udapteAudio(baseSession: session))
-//        case .videoCall:
-//            output?(.update(Session: session))
-//        default:
-//            break
-//        }
-//    }
-//
-//    func sessionMissed(session: VTokBaseSession, message: String) {
-//        DispatchQueue.main.async {[weak self] in
-//            self?.output?(.dismissCallView)
-//        }
-//        stopSound()
-//    }
-//
-//    func sessionRinging(session: VTokBaseSession, message: String) {
-//        output?(.update(Session: session))
-//    }
-//
-//    func invalid(session: VTokBaseSession, message: String) {
-//        output?(.update(Session: session))
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { [weak self] in
-//            self?.output?(.dismissCallView)
-//        })
-//    }
-//
-//    func sessionDidUpdate(session: VTokBaseSession) {
-//
-//    }
-//
-//}
-
 extension CallingViewModelImpl: SessionDelegate {
     func didGetPublicUrl(for session: VTokBaseSession, with url: String) {
     }
@@ -283,8 +174,7 @@ extension CallingViewModelImpl: SessionDelegate {
                 output?(.udapteAudio(baseSession: session))
             case .videoCall:
                 output?(.update(Session: session))
-            default:
-                break
+          
             }
         case .invalidTarget:
             output?(.update(Session: session))
@@ -314,8 +204,7 @@ extension CallingViewModelImpl {
             output?(.loadAudioView(user: user))
         case .videoCall:
             output?(.loadVideoView(user: user))
-        default:
-            break
+      
         }
 
         vtokSdk.accept(session: session)
