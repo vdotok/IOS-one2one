@@ -144,31 +144,18 @@ extension ContactViewModelImpl {
 
 extension ContactViewModelImpl: SDKConnectionDelegate {
     
-    
-    func didRegister() {
-        output?(.socketConnected)
+    func didGenerate(output: SDKOutPut) {
+        switch output {
+        case .registered:
+            self.output?(.socketConnected)
+        case .disconnected(_):
+            self.output?(.socketDisconnected)
+        case .sessionRequest(let request):
+            guard let sdk = vtokSdk else {return}
+            let users = contacts.filter({$0.refID == request.to.first})
+            router.incomingCall(vtokSdk: sdk, sessionRequest: request, users: users)
+        }
     }
-    
-    func didFailToRegister(with error: String) {
-        
-    }
-    
-    func  didReceived(sessionRequest: VTokBaseSession) {
-        print(sessionRequest)
-        guard let sdk = vtokSdk else {return}
-        let users = contacts.filter({$0.refID == sessionRequest.to.first})
-        router.incomingCall(vtokSdk: sdk, sessionRequest: sessionRequest, users: users)
-    }
-    
-    
-    func didMissedSessionRequest(sessionUUID: String, message: String) {
-        
-    }
-    
-    func socketDidDisconnect() {
-        output?(.socketDisconnected)
-    }
-    
     
 }
 

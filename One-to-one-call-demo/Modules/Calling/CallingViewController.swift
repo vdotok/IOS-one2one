@@ -70,12 +70,8 @@ public class CallingViewController: UIViewController {
         switch baseSession.sessionMediaType {
         case .audioCall:
             audioView?.update(with: baseSession)
-            break
         case .videoCall:
             videoView?.update(with: baseSession)
-            break
-        case .screenshare:
-        break
         }
     }
     
