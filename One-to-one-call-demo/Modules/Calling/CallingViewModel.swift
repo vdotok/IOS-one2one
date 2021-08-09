@@ -112,7 +112,7 @@ extension CallingViewModelImpl {
         guard let users = users else {return}
         let refIds = users.map({$0.refID})
         let requestID = getRequestId()
-        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: .videoCall,callType: .onetoone)
+        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone, connectedUsers: [])
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     func getRequestId() -> String {
