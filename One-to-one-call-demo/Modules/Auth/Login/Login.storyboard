@@ -122,7 +122,7 @@
                     <navigationItem key="navigationItem" id="zAY-Sx-yXO"/>
                     <connections>
                         <outlet property="containerView" destination="VA9-sS-dgV" id="4Ww-Jb-efr"/>
-                        <outlet property="email" destination="OQM-dw-c6k" id="v2v-0V-kdq"/>
+                        <outlet property="email" destination="OQM-dw-c6k" id="HUU-di-x0x"/>
                         <outlet property="password" destination="K2d-B3-yRy" id="x7o-tu-jb9"/>
                         <outlet property="singupButton" destination="WQo-ec-Me6" id="Tp3-ym-A5g"/>
                     </connections>

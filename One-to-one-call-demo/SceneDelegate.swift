@@ -23,8 +23,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()
         window?.overrideUserInterfaceStyle = .light
-        authenticate(with: AuthenticationConstants.AUTHTOKEN,
-                     projectId: AuthenticationConstants.PROJECTID)
+        guard let _ =  VDOTOKObject<UserResponse>().getData() else  {
+            let viewController = LoginBuilder().build(with: self.navigationController)
+            viewController.modalPresentationStyle = .fullScreen
+            self.window?.rootViewController = viewController
+            return
+        }
+        let navigationControlr = UINavigationController()
+        navigationControlr.modalPresentationStyle = .fullScreen
+        let viewController = ContactBuilder().build(with: navigationControlr)
+        viewController.modalPresentationStyle = .fullScreen
+        navigationControlr.setViewControllers([viewController], animated: true)
+        self.window?.rootViewController = navigationControlr
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -53,34 +63,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-    }
-    func authenticate(with authToken: String, projectId: String) {
-      
-        let request = AuthenticateRequest(auth_token: authToken, project_id: projectId)
-        authenticateSerivce.fetch(with: request) { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let response):
-                DispatchQueue.main.async {[weak self] in
-                    guard let self = self else {return}
-                    guard let _ =  VDOTOKObject<UserResponse>().getData() else  {
-                        let viewController = LoginBuilder().build(with: self.navigationController)
-                        viewController.modalPresentationStyle = .fullScreen
-                        self.window?.rootViewController = viewController
-                        return
-                    }
-                    let navigationControlr = UINavigationController()
-                    navigationControlr.modalPresentationStyle = .fullScreen
-                    let viewController = ContactBuilder().build(with: navigationControlr)
-                    viewController.modalPresentationStyle = .fullScreen
-                    navigationControlr.setViewControllers([viewController], animated: true)
-                    self.window?.rootViewController = navigationControlr
-                }
-                
-                print(response)
-            }
-        }
     }
 
 }

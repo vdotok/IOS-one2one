@@ -61,7 +61,7 @@ extension APIRequest {
         }
         
         if getPath() == "AuthenticateSDK" {
-            url = URL(string: "https://vtkapi.vdotok.com/API/v0/AuthenticateSDK")!
+            url = URL(string: "https://vtkapi.vdotok.dev/API/v0/AuthenticateSDK")!
         }
         return url
     }
@@ -69,7 +69,7 @@ extension APIRequest {
 }
 
 struct CpassApi {
-    static let host = "tenant-api.vdotok.com"
+    static let host = "tenant-api.vdotok.dev"
     static let apiVersion = "API/v0"
     static let scheme = "https"
 }
