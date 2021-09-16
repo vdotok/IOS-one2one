@@ -19,6 +19,7 @@ public class LoginViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+      
         configureAppearance()
         bindViewModel()
         viewModel.viewModelDidLoad()

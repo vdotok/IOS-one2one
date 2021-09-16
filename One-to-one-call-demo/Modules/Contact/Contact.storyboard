@@ -128,7 +128,7 @@
                         <outlet property="searchBar" destination="u5J-NC-9bX" id="wif-ik-5dC"/>
                         <outlet property="separatorView" destination="CUg-iJ-37s" id="KCT-tr-zIL"/>
                         <outlet property="tableView" destination="3Rn-pN-aG7" id="dJT-uy-gBe"/>
-                        <outlet property="userName" destination="eR1-Ru-8qB" id="Y52-6d-C2w"/>
+                        <outlet property="userName" destination="eR1-Ru-8qB" id="9Ig-NP-aVX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rm-0H-0F8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

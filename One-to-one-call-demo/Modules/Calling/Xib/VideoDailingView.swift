@@ -89,6 +89,7 @@ class VideoDailingView: UIView {
             configureRinginState()
         case .invalidTarget:
             configureInvalidState()
+
             
         default:
             break

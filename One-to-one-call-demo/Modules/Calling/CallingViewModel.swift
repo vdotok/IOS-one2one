@@ -1,4 +1,4 @@
-//  
+//
 //  CallingViewModel.swift
 //  One-to-one-call-demo
 //
@@ -49,6 +49,7 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
     var users: [User]?
     var session: VTokBaseSession?
     var player: AVAudioPlayer?
+    var isBusy: Bool = false
     
     init(router: CallingRouter, screenType: ScreenType, vtokSdk: VTokSDK, users: [User]? = nil, session: VTokBaseSession? = nil) {
         self.router = router
@@ -112,7 +113,7 @@ extension CallingViewModelImpl {
         guard let users = users else {return}
         let refIds = users.map({$0.refID})
         let requestID = getRequestId()
-        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: .videoCall,callType: .onetoone)
+        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone, connectedUsers: [])
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     func getRequestId() -> String {
@@ -151,10 +152,8 @@ extension CallingViewModelImpl: SessionDelegate {
             switch session.sessionMediaType {
             case .audioCall:
                 output?(.udapteAudio(baseSession: session))
-                break
             case .videoCall:
                 output?(.update(Session: session))
-                break
             }
         case .rejected:
             output?(.dismissCallView)
@@ -165,9 +164,16 @@ extension CallingViewModelImpl: SessionDelegate {
             }
             stopSound()
         case .hangup:
-            DispatchQueue.main.async {[weak self] in
+            guard isBusy else {
+                DispatchQueue.main.async {[weak self] in
+                    self?.output?(.dismissCallView)
+                }
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
                 self?.output?(.dismissCallView)
             }
+           
         case .tryingToConnect:
             switch session.sessionMediaType {
             case .audioCall:
@@ -181,6 +187,9 @@ extension CallingViewModelImpl: SessionDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { [weak self] in
                 self?.output?(.dismissCallView)
             })
+        case .busy:
+            isBusy = true
+            output?(.update(Session: session))
         default:
             break
         }
