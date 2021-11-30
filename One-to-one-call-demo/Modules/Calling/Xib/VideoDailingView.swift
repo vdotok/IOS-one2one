@@ -155,7 +155,10 @@ class VideoDailingView: UIView {
         cameraButton.isEnabled = true
         speakerButton.isEnabled = true
         speakerButton.isSelected = true
-        configureTimer()
+        if timer == nil {
+            configureTimer()
+        }
+       
     }
     private func configureRinginState() {
         timeLabel.isHidden = true
