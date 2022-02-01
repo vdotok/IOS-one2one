@@ -3,6 +3,7 @@
 //  One-to-one-call-demo
 //
 //  Created by usama farooq on 09/06/2021.
+//  Copyright © 2021 VDOTOK. All rights reserved.
 //
 
 import Foundation
@@ -131,16 +132,19 @@ extension CallingViewModelImpl {
 }
 
 extension CallingViewModelImpl: SessionDelegate {
-    func didGetPublicUrl(for session: VTokBaseSession, with url: String) {
-    }
-    
-    func configureLocalViewFor(session: VTokBaseSession, renderer: UIView) {
+    func configureLocalViewFor(session: VTokBaseSession, with stream: [UserStream]) {
+        guard let renderer = stream.first?.renderer else {return}
         output?(.updateLocalView(session: session, view: renderer))
     }
     
     func configureRemoteViews(for session: VTokBaseSession, with streams: [UserStream]) {
-        guard let view = streams.first?.renderer else {return}
-        output?(.updateRemoteView(session: session, view: view))
+        guard let stream = streams.filter({$0.streamDirection == .incoming}).first else {
+            return}
+        output?(.updateRemoteView(session: session, view: stream.renderer))
+    }
+    
+    func didGetPublicUrl(for session: VTokBaseSession, with url: String) {
+        
     }
     
     func stateDidUpdate(for session: VTokBaseSession) {
@@ -173,14 +177,14 @@ extension CallingViewModelImpl: SessionDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
                 self?.output?(.dismissCallView)
             }
-           
+            
         case .tryingToConnect:
             switch session.sessionMediaType {
             case .audioCall:
                 output?(.udapteAudio(baseSession: session))
             case .videoCall:
                 output?(.update(Session: session))
-          
+                
             }
         case .invalidTarget:
             output?(.update(Session: session))
@@ -194,6 +198,74 @@ extension CallingViewModelImpl: SessionDelegate {
             break
         }
     }
+    
+    func sessionTimeDidUpdate(with value: String) {
+        
+    }
+    
+//    func didGetPublicUrl(for session: VTokBaseSession, with url: String) {
+//    }
+    
+//    func configureLocalViewFor(session: VTokBaseSession, renderer: UIView) {
+//        output?(.updateLocalView(session: session, view: renderer))
+//    }
+    
+//    func configureRemoteViews(for session: VTokBaseSession, with streams: [UserStream]) {
+//        guard let view = streams.first?.renderer else {return}
+//        output?(.updateRemoteView(session: session, view: view))
+//    }
+    
+//    func stateDidUpdate(for session: VTokBaseSession) {
+//        switch session.state {
+//        case .ringing:
+//            output?(.update(Session: session))
+//        case .connected:
+//            stopSound()
+//            switch session.sessionMediaType {
+//            case .audioCall:
+//                output?(.udapteAudio(baseSession: session))
+//            case .videoCall:
+//                output?(.update(Session: session))
+//            }
+//        case .rejected:
+//            output?(.dismissCallView)
+//            stopSound()
+//        case .missedCall:
+//            DispatchQueue.main.async {[weak self] in
+//                self?.output?(.dismissCallView)
+//            }
+//            stopSound()
+//        case .hangup:
+//            guard isBusy else {
+//                DispatchQueue.main.async {[weak self] in
+//                    self?.output?(.dismissCallView)
+//                }
+//                return
+//            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
+//                self?.output?(.dismissCallView)
+//            }
+//
+//        case .tryingToConnect:
+//            switch session.sessionMediaType {
+//            case .audioCall:
+//                output?(.udapteAudio(baseSession: session))
+//            case .videoCall:
+//                output?(.update(Session: session))
+//
+//            }
+//        case .invalidTarget:
+//            output?(.update(Session: session))
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { [weak self] in
+//                self?.output?(.dismissCallView)
+//            })
+//        case .busy:
+//            isBusy = true
+//            output?(.update(Session: session))
+//        default:
+//            break
+//        }
+//    }
     
     
 }

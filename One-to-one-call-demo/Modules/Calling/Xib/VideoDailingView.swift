@@ -3,6 +3,7 @@
 //  One-to-one-call-demo
 //
 //  Created by usama farooq on 09/06/2021.
+//  Copyright © 2021 VDOTOK. All rights reserved.
 //
 
 import UIKit
@@ -155,7 +156,10 @@ class VideoDailingView: UIView {
         cameraButton.isEnabled = true
         speakerButton.isEnabled = true
         speakerButton.isSelected = true
-        configureTimer()
+        if timer == nil {
+            configureTimer()
+        }
+       
     }
     private func configureRinginState() {
         timeLabel.isHidden = true
