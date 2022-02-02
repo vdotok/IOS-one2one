@@ -31,11 +31,12 @@ Register at [VdoTok HomePage](https://vdotok.com) to get Authentication Token an
 *	Once inside the project’s root directory type `ls` (LS in small letters) and hit enter and you should see a file named **Podfile**
 *	Type command `pod install` hit enter and wait until the process is complete
 *	open .xcworkspace file by double clicking it
+*	Go to project file select target one-to-one-demo and select your team and update your bundle id
 
 ### Updating  Project ID and Authentication Token
 Get Project ID and Authentication Token from [Admin Panel](https://vdotok.com)
 
-Open .xcworkspace file in Xcode. In struct AuthenticationConstants Replace the values for PROJECTID  and AUTHTOKEN with your values
+Open .xcworkspace file in Xcode. In struct AuthenticationConstants Replace the values for PROJECTID, Host  and AUTHTOKEN with your values
 
 ### Building On Device
 *iOSSDKStreaming does not work for simulator*
