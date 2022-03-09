@@ -28,7 +28,7 @@ Register at [VdoTok HomePage](https://vdotok.com) to get **Authentication Token*
 
 ### Code Setup
 *	Click on **Code** button 
-*	From HTTPS section copy **repo URL**
+*	From HTTPS section, copy **repo URL**
 *	Open **Terminal**
 *	Go to Desktop **Directory** by typing `cd Desktop` and hit **Enter**
 *	And then type `git clone paste_copied_ url` and hit **Enter**
