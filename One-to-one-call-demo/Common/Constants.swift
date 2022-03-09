@@ -13,8 +13,6 @@ struct Constants {
     static let Register = "register"
     static let TenantId = "U6WM5"
     
-    
-    
 }
 
 struct AuthenticationConstants {
