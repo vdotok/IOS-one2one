@@ -356,13 +356,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		5DAB8C1426C113080053FE2A /* Streaming */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Streaming;
-			sourceTree = "<group>";
-		};
 		5DBBF71E266FBFA90086ED93 = {
 			isa = PBXGroup;
 			children = (
@@ -384,7 +377,6 @@
 		5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */ = {
 			isa = PBXGroup;
 			children = (
-				5DAB8C1426C113080053FE2A /* Streaming */,
 				5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */,
 				5DBBF787266FC25C0086ED93 /* Translation */,
 				5DBBF782266FC2280086ED93 /* Model */,
@@ -928,7 +920,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -955,7 +946,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
