@@ -97,7 +97,9 @@ class AudioDailingView: UIView {
         tryingStack.isHidden = true
         connectedStack.isHidden = false
         speakerButton.isSelected = false
-        configureTimer()
+        if timer == nil {
+            configureTimer()
+        }
     }
     private func configureRinginState() {
         callTime.isHidden = true
