@@ -19,12 +19,14 @@ public class CallingViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.isIdleTimerDisabled = true
         configureAppearance()
         bindViewModel()
         viewModel.viewModelDidLoad()
     }
     
     deinit {
+        UIApplication.shared.isIdleTimerDisabled = false
         print("calling viewcontroller destroyed")
     }
     
