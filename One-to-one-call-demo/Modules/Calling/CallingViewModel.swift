@@ -79,7 +79,7 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
         case udapteAudio(baseSession: VTokBaseSession)
         case dismissCallView
         case updateLocalView(session: VTokBaseSession,view: UIView)
-        case updateRemoteView(session: VTokBaseSession, view: UIView)
+        case updateRemoteView(session: VTokBaseSession, streans: [UserStream])
         case update(Session: VTokBaseSession)
         case updateState(information: StateInformation)
         case removeRemoteView
@@ -138,9 +138,8 @@ extension CallingViewModelImpl: SessionDelegate {
     }
     
     func configureRemoteViews(for session: VTokBaseSession, with streams: [UserStream]) {
-        guard let stream = streams.filter({$0.streamDirection == .incoming}).first else {
-            return}
-        output?(.updateRemoteView(session: session, view: stream.renderer))
+       
+        output?(.updateRemoteView(session: session, streans: streams))
     }
     
     func didGetPublicUrl(for session: VTokBaseSession, with url: String) {

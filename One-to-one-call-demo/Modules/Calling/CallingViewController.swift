@@ -19,12 +19,14 @@ public class CallingViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.isIdleTimerDisabled = true
         configureAppearance()
         bindViewModel()
         viewModel.viewModelDidLoad()
     }
     
     deinit {
+        UIApplication.shared.isIdleTimerDisabled = false
         print("calling viewcontroller destroyed")
     }
     
@@ -49,10 +51,10 @@ public class CallingViewController: UIViewController {
                 audioView?.update(with: state)
             case .update(let baseSession):
                 update(baseSession: baseSession)
-            case .updateLocalView(let session, let localView):
+            case .updateLocalView(let _, let localView):
                     videoView?.updateLocal(view: localView)
-            case .updateRemoteView(let session, let remoteView):
-                videoView?.updateRemote(view: remoteView)
+            case .updateRemoteView(let session, let userStreams):
+                videoView?.updateRemote(streams: userStreams)
             case .removeRemoteView:
                 videoView?.removeRemoteView()
             case .updateState(let stateInformation):
