@@ -85,6 +85,7 @@ class VideoDailingView: UIView {
         case .calling:
             configureTryingState()
         case .connected:
+            
             configureConnectedState()
         case .ringing:
             configureRinginState()
@@ -109,14 +110,26 @@ class VideoDailingView: UIView {
     
     }
     
-    func updateRemote(view: UIView) {
-        remoteView.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
+    func updateRemote(streams: [UserStream]) {
+        guard let remoteStream = streams.filter({$0.streamDirection == .incoming}).first else {return}
+        configureRemoteView(renderer: remoteStream.renderer)
+        
+        guard let localStream = streams.filter({$0.streamDirection == .outgoing}).first else {return}
+        updateLocal(view: localStream.renderer)
+        
+    }
+    
+    func configureRemoteView(renderer: UIView) {
+        for subView in remoteView.subviews {
+            subView.removeFromSuperview()
+        }
+        remoteView.addSubview(renderer)
+        renderer.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            view.leadingAnchor.constraint(equalTo: self.remoteView.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo:self.remoteView.trailingAnchor),
-            view.topAnchor.constraint(equalTo: self.remoteView.topAnchor),
-            view.bottomAnchor.constraint(equalTo: self.remoteView.bottomAnchor)
+            renderer.leadingAnchor.constraint(equalTo: self.remoteView.leadingAnchor),
+            renderer.trailingAnchor.constraint(equalTo:self.remoteView.trailingAnchor),
+            renderer.topAnchor.constraint(equalTo: self.remoteView.topAnchor),
+            renderer.bottomAnchor.constraint(equalTo: self.remoteView.bottomAnchor)
         ])
     }
     
