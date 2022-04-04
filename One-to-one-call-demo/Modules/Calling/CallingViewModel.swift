@@ -114,7 +114,8 @@ extension CallingViewModelImpl {
         guard let users = users else {return}
         let refIds = users.map({$0.refID})
         let requestID = getRequestId()
-        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone, connectedUsers: [])
+        let customData = SessionCustomData(calleName: user.fullName, groupName: nil, groupAutoCreatedValue: nil)
+        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData)
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     func getRequestId() -> String {
@@ -193,6 +194,13 @@ extension CallingViewModelImpl: SessionDelegate {
         case .busy:
             isBusy = true
             output?(.update(Session: session))
+        case .insufficientBalance:
+            output?(.update(Session: session))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: { [weak self] in
+                self?.output?(.dismissCallView)
+            })
+        case .suspendedByProvider:
+            self.output?(.dismissCallView)
         default:
             break
         }

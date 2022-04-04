@@ -65,9 +65,18 @@ class AudioDailingView: UIView {
         case .invalidTarget:
             configureInvalidState()
             break
+        case .insufficientBalance:
+            configureInsufficientBalance()
         default:
         break
         }
+    }
+    
+    private func configureInsufficientBalance() {
+        callTime.isHidden = true
+        callState.text = "Insufficient funds..."
+        tryingStack.isHidden = false
+        connectedStack.isHidden = true
     }
     
     private func configureInvalidState() {

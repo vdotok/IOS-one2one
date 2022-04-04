@@ -91,12 +91,15 @@ class VideoDailingView: UIView {
             configureRinginState()
         case .invalidTarget:
             configureInvalidState()
-
+        case .insufficientBalance:
+            configureInsufficientBalance()
             
         default:
             break
         }
     }
+    
+    
 
     func updateLocal(view: UIView) {
             self.localView.addSubview(view)
@@ -137,6 +140,13 @@ class VideoDailingView: UIView {
         for view in self.remoteView.subviews {
             view.removeFromSuperview()
         }
+    }
+    
+    private func configureInsufficientBalance() {
+        timeLabel.isHidden = true
+        callState.text = "Insufficient funds..."
+        tryingStack.isHidden = false
+        connectedStack.isHidden = true
     }
     
     private func configureInvalidState() {
