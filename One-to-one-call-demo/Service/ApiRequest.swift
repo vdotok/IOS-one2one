@@ -57,12 +57,9 @@ extension APIRequest {
         let fakeUrl = URL(fileURLWithPath: "")
         guard let baseUrl = URL(string: Configurations.scheme + "://" + AuthenticationConstants.HOST + "/" +  Configurations.apiVersion),
               let component = URLComponents(url: baseUrl.appendingPathComponent(getPath()), resolvingAgainstBaseURL: false), var url = component.url else {
+
             print("Unable to create URL components")
             return fakeUrl
-        }
-        
-        if getPath() == "AuthenticateSDK" {
-            url = URL(string: "https://vtkapi.vdotok.dev/API/v0/AuthenticateSDK")!
         }
         return url
     }
@@ -73,3 +70,4 @@ struct Configurations {
     static let apiVersion = "API/v0"
     static let scheme = "https"
 }
+
