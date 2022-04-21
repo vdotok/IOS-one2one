@@ -8,6 +8,7 @@
 
 import Foundation
 import iOSSDKStreaming
+import MultipeerConnectivity
 
 typealias ContactViewModelOutput = (ContactViewModelImpl.Output) -> Void
 
@@ -23,12 +24,14 @@ protocol ContactViewModel: ContactViewModelInput {
     var contacts: [User] {get set}
     var searchContacts: [User] {get set}
     var isSearching: Bool {get set}
+    var vtokSdk: VTokSDK? {get set}
    
     func viewModelDidLoad()
     func viewModelWillAppear()
     func rowsCount() -> Int
     func viewModelItem(row: Int) -> User
     func filterGroups(with text: String)
+    func fetchPeers() -> [MCPeerID]
 }
 
 class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
@@ -77,7 +80,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
                                       authorizationToken: user.authorizationToken!,
                                       requestID: getRequestId(),
                                       projectID: AuthenticationConstants.PROJECTID)
-        self.vtokSdk = VTokSDK(url: user.mediaServerMap.completeAddress, registerRequest: request, connectionDelegate: self)
+        self.vtokSdk = VTokSDK(url: user.mediaServerMap.completeAddress, registerRequest: request, connectionDelegate: self, peerName: user.fullName!)
         
     }
     
@@ -140,7 +143,10 @@ extension ContactViewModelImpl {
         self.searchContacts = contacts.filter({$0.fullName.lowercased().prefix(text.count) == text.lowercased()})
         output?(.reload)
     }
-
+    
+    func fetchPeers() -> [MCPeerID] {
+        return [MCPeerID(displayName: "ssss")]
+    }
 }
 
 extension ContactViewModelImpl: SDKConnectionDelegate {

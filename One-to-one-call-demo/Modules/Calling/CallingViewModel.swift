@@ -116,7 +116,7 @@ extension CallingViewModelImpl {
         let requestID = getRequestId()
         let customData = SessionCustomData(calleName: user.fullName, groupName: nil, groupAutoCreatedValue: nil)
         let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData)
-        vtokSdk.initiate(session: session, sessionDelegate: self)
+        vtokSdk.initiate(session: session, sessionDelegate: self, sessionServerType: .localServer)
     }
     func getRequestId() -> String {
         let generatable = IdGenerator()

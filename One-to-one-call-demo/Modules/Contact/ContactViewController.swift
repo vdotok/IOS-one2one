@@ -8,6 +8,7 @@
 
 import UIKit
 import iOSSDKStreaming
+import MultipeerConnectivity
 
 public class ContactViewController: UIViewController {
     
@@ -94,6 +95,22 @@ extension ContactViewController {
         registerCell()
         guard let user = VDOTOKObject<UserResponse>().getData() else {return}
         userName.text = user.fullName
+        
+        let locationImage = UIImage(systemName: "location")?.withRenderingMode(.alwaysOriginal)
+        let locationButton = UIBarButtonItem(image: locationImage, style: .plain, target: self, action: #selector(locationButtonTapped))
+        navigationItem.rightBarButtonItems = [locationButton]
+        
+    }
+    
+    @objc func locationButtonTapped() {
+        
+        let vc = AvailableDevicesController()
+        vc.modalPresentationStyle = .custom
+        vc.modalTransitionStyle = .crossDissolve
+        vc.peerID = viewModel.fetchPeers()
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+        
     }
     
     private func registerCell() {
@@ -164,4 +181,15 @@ extension ContactViewController: ContactCellProtocol {
         viewModel.moveToAudio(with: [user])
     }
 
+}
+
+extension ContactViewController: AvailableDeviceDelegate {
+    func didSelect(peer: MCPeerID) {
+        guard let user = VDOTOKObject<UserResponse>().getData(),
+              let sdk = viewModel
+        else {return}
+        // sdk.invitePeer(peer: peer, refID: user.refID!)
+    }
+    
+    
 }

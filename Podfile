@@ -8,7 +8,10 @@ target 'One-to-one-call-demo' do
   # Pods for One-to-one-call-demo
   pod 'KRProgressHUD'
   pod 'IQKeyboardManagerSwift'
-  pod 'VdoTokStreaming', :git => 'https://github.com/vdotok/VdoTokStreaming.git'
-
+  # pod 'VdoTokStreaming', :git => 'https://github.com/vdotok/VdoTokStreaming.git'
+  pod 'InternalStrategy', :path => '../internal_strategy'
+  pod 'Firebase/Auth'
+   pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
 end
