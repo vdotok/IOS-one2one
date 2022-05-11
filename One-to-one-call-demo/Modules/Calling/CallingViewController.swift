@@ -19,7 +19,10 @@ public class CallingViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.isIdleTimerDisabled = true
+        DispatchQueue.main.async {
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
+        
         configureAppearance()
         bindViewModel()
         viewModel.viewModelDidLoad()

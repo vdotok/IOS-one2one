@@ -186,9 +186,10 @@ extension ContactViewController: ContactCellProtocol {
 extension ContactViewController: AvailableDeviceDelegate {
     func didSelect(peer: MCPeerID) {
         guard let user = VDOTOKObject<UserResponse>().getData(),
-              let sdk = viewModel
+              let sdk = viewModel.vtokSdk
         else {return}
-        // sdk.invitePeer(peer: peer, refID: user.refID!)
+         sdk.invitePeer(peer: peer, refID: user.refID!)
+    
     }
     
     

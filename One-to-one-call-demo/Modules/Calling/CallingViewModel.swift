@@ -134,8 +134,10 @@ extension CallingViewModelImpl {
 
 extension CallingViewModelImpl: SessionDelegate {
     func configureLocalViewFor(session: VTokBaseSession, with stream: [UserStream]) {
-        guard let renderer = stream.first?.renderer else {return}
-        output?(.updateLocalView(session: session, view: renderer))
+        guard let localStream = stream.filter({$0.streamDirection == .outgoing}).first else {return}
+            output?(.updateLocalView(session: session, view: localStream.renderer))
+            
+        
     }
     
     func configureRemoteViews(for session: VTokBaseSession, with streams: [UserStream]) {

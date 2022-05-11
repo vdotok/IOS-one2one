@@ -145,7 +145,7 @@ extension ContactViewModelImpl {
     }
     
     func fetchPeers() -> [MCPeerID] {
-        return [MCPeerID(displayName: "ssss")]
+        return vtokSdk?.getPeers() ?? []
     }
 }
 

