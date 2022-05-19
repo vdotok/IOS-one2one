@@ -62,25 +62,18 @@ public class SignUpViewController: UIViewController {
                     ProgressHud.showError(message: message, viewController: self)
                 })
             case .success:
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else {return}
                     let navigationControlr = UINavigationController()
                     navigationControlr.modalPresentationStyle = .fullScreen
                     let viewController = ContactBuilder().build(with: navigationControlr)
                     viewController.modalPresentationStyle = .fullScreen
                     navigationControlr.setViewControllers([viewController], animated: true)
-                    present(navigationControlr, animated: true, completion: nil)
-                    
-//                    let viewController = GroupsBuilder().build(with: UINavigationController())
-//                    viewController.modalPresentationStyle = .fullScreen
-//                    let navigationControlr = UINavigationController(rootViewController: viewController)
-//                    navigationControlr.modalPresentationStyle = .fullScreen
-//                  present(navigationControlr, animated: true, completion: nil)
+                    self.present(navigationControlr, animated: true, completion: nil)
                 }
             case .userExist:
                 break
                
-            default:
-                break
             }
         }
     }

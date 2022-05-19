@@ -115,7 +115,7 @@ extension CallingViewModelImpl {
         let refIds = users.map({$0.refID})
         let requestID = getRequestId()
         let customData = SessionCustomData(calleName: user.fullName, groupName: nil, groupAutoCreatedValue: nil)
-        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData)
+        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData, sessionServerType: .peerToPeer)
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     func getRequestId() -> String {
@@ -134,8 +134,8 @@ extension CallingViewModelImpl {
 
 extension CallingViewModelImpl: SessionDelegate {
     func configureLocalViewFor(session: VTokBaseSession, with stream: [UserStream]) {
-        guard let renderer = stream.first?.renderer else {return}
-        output?(.updateLocalView(session: session, view: renderer))
+        guard let localStream = stream.filter({$0.streamDirection == .outgoing}).first else {return}
+        output?(.updateLocalView(session: session, view: localStream.renderer))
     }
     
     func configureRemoteViews(for session: VTokBaseSession, with streams: [UserStream]) {

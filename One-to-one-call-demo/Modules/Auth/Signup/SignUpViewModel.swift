@@ -76,13 +76,13 @@ extension SignUpViewModelImpl {
             case .success(let response):
                 switch response.status {
                 case 503:
-                    self.output?(.failure(message: response.message ?? "Service Unavailable"))
+                    self.output?(.failure(message: response.message ))
                 case 500:
-                    self.output?(.failure(message: response.message ?? "Internal Server Error server error"))
+                    self.output?(.failure(message: response.message ))
                 case 409:
-                    self.output?(.failure(message: response.message ?? "Username already taken. Please choose another username"))
+                    self.output?(.failure(message: response.message ))
                 case 407:
-                    self.output?(.failure(message: response.message ?? ""))
+                    self.output?(.failure(message: response.message ))
                 case 200:
                     self.output?(.success)
                 default:
