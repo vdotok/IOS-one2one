@@ -175,8 +175,7 @@ extension CallingViewController: VideoDelegate {
     func didTapSpeaker(baseSession: VTokBaseSession, state: SpeakerState) {
         viewModel.speaker(session: baseSession, state: state)
     }
-    
-    
+
 }
 
 extension CallingViewController: IncomingCallDelegate {
@@ -187,6 +186,5 @@ extension CallingViewController: IncomingCallDelegate {
     func didAccept(session: VTokBaseSession, users: [User]) {
         viewModel.acceptCall(session: session, user: users)
     }
-
     
 }
