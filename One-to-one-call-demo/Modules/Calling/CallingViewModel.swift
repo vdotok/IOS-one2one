@@ -118,6 +118,7 @@ extension CallingViewModelImpl {
         let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData)
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
+    
     func getRequestId() -> String {
         let generatable = IdGenerator()
         guard let response = VDOTOKObject<UserResponse>().getData() else {return ""}
@@ -209,71 +210,6 @@ extension CallingViewModelImpl: SessionDelegate {
     func sessionTimeDidUpdate(with value: String) {
         
     }
-    
-//    func didGetPublicUrl(for session: VTokBaseSession, with url: String) {
-//    }
-    
-//    func configureLocalViewFor(session: VTokBaseSession, renderer: UIView) {
-//        output?(.updateLocalView(session: session, view: renderer))
-//    }
-    
-//    func configureRemoteViews(for session: VTokBaseSession, with streams: [UserStream]) {
-//        guard let view = streams.first?.renderer else {return}
-//        output?(.updateRemoteView(session: session, view: view))
-//    }
-    
-//    func stateDidUpdate(for session: VTokBaseSession) {
-//        switch session.state {
-//        case .ringing:
-//            output?(.update(Session: session))
-//        case .connected:
-//            stopSound()
-//            switch session.sessionMediaType {
-//            case .audioCall:
-//                output?(.udapteAudio(baseSession: session))
-//            case .videoCall:
-//                output?(.update(Session: session))
-//            }
-//        case .rejected:
-//            output?(.dismissCallView)
-//            stopSound()
-//        case .missedCall:
-//            DispatchQueue.main.async {[weak self] in
-//                self?.output?(.dismissCallView)
-//            }
-//            stopSound()
-//        case .hangup:
-//            guard isBusy else {
-//                DispatchQueue.main.async {[weak self] in
-//                    self?.output?(.dismissCallView)
-//                }
-//                return
-//            }
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
-//                self?.output?(.dismissCallView)
-//            }
-//
-//        case .tryingToConnect:
-//            switch session.sessionMediaType {
-//            case .audioCall:
-//                output?(.udapteAudio(baseSession: session))
-//            case .videoCall:
-//                output?(.update(Session: session))
-//
-//            }
-//        case .invalidTarget:
-//            output?(.update(Session: session))
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { [weak self] in
-//                self?.output?(.dismissCallView)
-//            })
-//        case .busy:
-//            isBusy = true
-//            output?(.update(Session: session))
-//        default:
-//            break
-//        }
-//    }
-    
     
 }
 

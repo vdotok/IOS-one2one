@@ -37,13 +37,10 @@ class SignupService: BaseDataStore, SignupStoreable {
     private func translate(data: Data, complition:  SignupComplition ) {
         do {
             let response: UserResponse = try translation.decodeObject(data: data)
-            
-            
             switch response.status {
             case 200:
                 VDOTOKObject<UserResponse>().setData(response)
                 VDOTOKObject<String>().setToken(response.authToken)
-                
             default:
                 break
             }
