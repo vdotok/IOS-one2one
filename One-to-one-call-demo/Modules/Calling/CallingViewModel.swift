@@ -115,7 +115,7 @@ extension CallingViewModelImpl {
         let refIds = users.map({$0.refID})
         let requestID = getRequestId()
         let customData = SessionCustomData(calleName: user.fullName, groupName: nil, groupAutoCreatedValue: nil)
-        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData, sessionServerType: .peerToPeer)
+        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData)
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     func getRequestId() -> String {
