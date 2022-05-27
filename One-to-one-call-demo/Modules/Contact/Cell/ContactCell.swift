@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ContactCellProtocol: class {
+protocol ContactCellProtocol: AnyObject {
     func didTapVideo(user: User)
     func didTapAudio(user: User)
 }

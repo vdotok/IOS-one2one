@@ -58,14 +58,14 @@ public class LoginViewController: UIViewController {
                 }
                
             case .success:
-                DispatchQueue.main.async {
-                    
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else {return}
                     let navigationControlr = UINavigationController()
                     navigationControlr.modalPresentationStyle = .fullScreen
                     let viewController = ContactBuilder().build(with: navigationControlr)
                     viewController.modalPresentationStyle = .fullScreen
                     navigationControlr.setViewControllers([viewController], animated: true)
-                    present(navigationControlr, animated: true, completion: nil)
+                    self.present(navigationControlr, animated: true, completion: nil)
                 }
             default:
                 break

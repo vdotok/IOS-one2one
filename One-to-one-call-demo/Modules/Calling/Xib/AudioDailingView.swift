@@ -8,7 +8,7 @@
 
 import UIKit
 import iOSSDKStreaming
-protocol AudioDelegate: class {
+protocol AudioDelegate: AnyObject {
     func didTapHangUp(VTokBaseSession: VTokBaseSession)
     func didTapMuteFor(VTokBaseSession: VTokBaseSession, state: AudioState)
     func didTapSpeakerFor(VTokBaseSession: VTokBaseSession, state: SpeakerState)

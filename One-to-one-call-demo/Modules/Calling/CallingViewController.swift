@@ -51,9 +51,9 @@ public class CallingViewController: UIViewController {
                 audioView?.update(with: state)
             case .update(let baseSession):
                 update(baseSession: baseSession)
-            case .updateLocalView(let _, let localView):
+            case .updateLocalView( _, let localView):
                     videoView?.updateLocal(view: localView)
-            case .updateRemoteView(let session, let userStreams):
+            case .updateRemoteView(_, let userStreams):
                 videoView?.updateRemote(streams: userStreams)
             case .removeRemoteView:
                 videoView?.removeRemoteView()
@@ -62,9 +62,6 @@ public class CallingViewController: UIViewController {
             break
             case .dismissCallView:
                 self.dismiss(animated: true, completion: nil)
-              
-            default:
-                break
             }
         }
     }
@@ -178,8 +175,7 @@ extension CallingViewController: VideoDelegate {
     func didTapSpeaker(baseSession: VTokBaseSession, state: SpeakerState) {
         viewModel.speaker(session: baseSession, state: state)
     }
-    
-    
+
 }
 
 extension CallingViewController: IncomingCallDelegate {
@@ -190,6 +186,5 @@ extension CallingViewController: IncomingCallDelegate {
     func didAccept(session: VTokBaseSession, users: [User]) {
         viewModel.acceptCall(session: session, user: users)
     }
-
     
 }

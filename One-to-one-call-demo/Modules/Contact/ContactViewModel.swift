@@ -8,6 +8,7 @@
 
 import Foundation
 import iOSSDKStreaming
+import UIKit
 
 typealias ContactViewModelOutput = (ContactViewModelImpl.Output) -> Void
 
@@ -70,14 +71,14 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
     
     func configureVdotTok() {
         
-        guard let user = VDOTOKObject<UserResponse>().getData() else {return}
+        guard let user = VDOTOKObject<UserResponse>().getData(), let url = user.mediaServerMap?.completeAddress else {return}
         let request = RegisterRequest(type: Constants.Request,
                                       requestType: Constants.Register,
                                       referenceID: user.refID!,
                                       authorizationToken: user.authorizationToken!,
                                       requestID: getRequestId(),
                                       projectID: AuthenticationConstants.PROJECTID)
-        self.vtokSdk = VTokSDK(url: user.mediaServerMap.completeAddress, registerRequest: request, connectionDelegate: self)
+        self.vtokSdk = VTokSDK(url: url, registerRequest: request, connectionDelegate: self)
         
     }
     
@@ -172,8 +173,6 @@ extension ContactViewModelImpl {
     }
     
     func moveToIncoming() {
-        guard let sdk = vtokSdk else {return}
-//        router.incomingCall(vtokSdk: sdk)
     }
     
     func closeConnection() {

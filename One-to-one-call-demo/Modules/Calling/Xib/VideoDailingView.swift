@@ -9,7 +9,7 @@
 import UIKit
 import iOSSDKStreaming
 
-protocol VideoDelegate: class {
+protocol VideoDelegate: AnyObject {
    
     func didTapVideo(for baseSession: VTokBaseSession, state: VideoState)
     func didTapMute(for baseSession: VTokBaseSession, state: AudioState)

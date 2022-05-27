@@ -56,7 +56,7 @@ class AuthenticateService: BaseDataStore, AuthenticateStoreable {
     func fetch(with request: AuthenticateRequest, complitionHandler: @escaping AuthenticateCompletionHandler) {
                 service.post(request: request) { (result) in
                     switch result {
-                    case .failure(let error):
+                    case .failure(_):
                         print("error")
                     case .success(let data ):
                         self.translate(data: data, complition: complitionHandler)
