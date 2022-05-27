@@ -11,8 +11,6 @@ import Foundation
 struct Constants {
     static let Request = "request"
     static let Register = "register"
-    static let TenantId = "U6WM5"
-    
 }
 
 struct AuthenticationConstants {
