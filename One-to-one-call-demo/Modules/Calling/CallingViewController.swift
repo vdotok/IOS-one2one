@@ -184,7 +184,7 @@ extension CallingViewController: IncomingCallDelegate {
     }
     
     func didAccept(session: VTokBaseSession, users: [User]) {
-        viewModel.acceptCall(session: session, user: users)
+        viewModel.acceptCall(session: session, user: users, viewController: self)
     }
     
 }

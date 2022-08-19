@@ -18,6 +18,24 @@ class ProgressHud {
         viewController.present(alert, animated: true, completion: nil)
     }
     
+    static func alertForPermission(message: String,viewController: UIViewController) {
+        let alert = UIAlertController(title: message, message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default))
+        alert.addAction(UIAlertAction(title: "Settings", style: .cancel) { (alert) -> Void in
+            if let appSettings = URL(string: UIApplication.openSettingsURLString + Bundle.main.bundleIdentifier!) {
+                if UIApplication.shared.canOpenURL(appSettings) {
+                    UIApplication.shared.open(appSettings)
+                }
+            }
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
+        }
+        
+        
+    }
+    
     static func show(viewController: UIViewController) {
         KRProgressHUD.show()
     }

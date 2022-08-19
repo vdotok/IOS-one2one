@@ -157,11 +157,11 @@ extension ContactViewController: UISearchBarDelegate {
 
 extension ContactViewController: ContactCellProtocol {
     func didTapVideo(user: User) {
-        viewModel.moveToVideo(with: [user])
+        viewModel.moveToVideo(with: [user], viewController: self)
     }
     
     func didTapAudio(user: User) {
-        viewModel.moveToAudio(with: [user])
+        viewModel.moveToAudio(with: [user], viewController: self)
     }
 
 }
