@@ -24,7 +24,7 @@ protocol CallingViewModelInput {
     
     var screenType: ScreenType {get set}
     func rejectCall(session: VTokBaseSession)
-    func acceptCall(session: VTokBaseSession, user: [User])
+    func acceptCall(session: VTokBaseSession, user: [User], viewController: UIViewController)
     func hangupCall(session: VTokBaseSession)
     func flipCamera(session: VTokBaseSession, state: CameraType)
     func mute(session: VTokBaseSession, state: AudioState)
@@ -96,12 +96,9 @@ extension CallingViewModelImpl {
         case .audioView:
             output?(.loadAudioView(user: users))
             callToParticipants(with: .audioCall)
-
         case .videoView:
             output?(.loadVideoView(user: users))
             callToParticipants(with: .videoCall)
-           
-            
         case .incomingCall:
             guard let baseSession = session else {return}
             output?(.loadIncomignCall(user: users, session: baseSession))
@@ -115,7 +112,7 @@ extension CallingViewModelImpl {
         let refIds = users.map({$0.refID})
         let requestID = getRequestId()
         let customData = SessionCustomData(calleName: user.fullName, groupName: nil, groupAutoCreatedValue: nil)
-        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone,data: customData)
+        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone, data: customData)
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     
@@ -220,9 +217,15 @@ extension CallingViewModelImpl {
         stopSound()
     }
     
-    func acceptCall(session: VTokBaseSession, user: [User]) {
-        
-        stopSound()
+    func acceptCall(session: VTokBaseSession, user: [User], viewController: UIViewController) {
+        guard Common.isAuthorized(viewController: viewController) else {
+            vtokSdk.reject(session: session)
+            stopSound()
+            output?(.dismissCallView)
+            return
+            
+        }
+      
         switch session.sessionMediaType {
         case .audioCall:
             output?(.loadAudioView(user: user))
@@ -295,3 +298,5 @@ extension CallingViewModelImpl {
     }
     
 }
+
+

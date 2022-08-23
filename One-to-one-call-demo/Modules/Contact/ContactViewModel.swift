@@ -13,8 +13,8 @@ import UIKit
 typealias ContactViewModelOutput = (ContactViewModelImpl.Output) -> Void
 
 protocol ContactViewModelInput {
-    func moveToAudio(with users: [User])
-    func moveToVideo(with users: [User])
+    func moveToAudio(with users: [User], viewController: UIViewController)
+    func moveToVideo(with users: [User], viewController: UIViewController)
     func moveToIncoming()
     func closeConnection()
 }
@@ -162,17 +162,20 @@ extension ContactViewModelImpl: SDKConnectionDelegate {
 }
 
 extension ContactViewModelImpl {
-    func moveToAudio(with users: [User]) {
+    func moveToAudio(with users: [User], viewController: UIViewController) {
+        guard Common.isAuthorized(viewController: viewController) else { return }
         guard let sdk = vtokSdk else {return}
         router.moveToAudio(vtokSdk: sdk, users: users)
     }
     
-    func moveToVideo(with users: [User]) {
+    func moveToVideo(with users: [User], viewController: UIViewController) {
+        guard Common.isAuthorized(viewController: viewController) else {return}
         guard let sdk = vtokSdk else {return}
         router.moveToVideo(vtokSdk: sdk, users: users)
     }
     
     func moveToIncoming() {
+        
     }
     
     func closeConnection() {

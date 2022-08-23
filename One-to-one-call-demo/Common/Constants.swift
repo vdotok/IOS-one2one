@@ -6,7 +6,10 @@
 //  Copyright © 2021 VDOTOK. All rights reserved.
 //
 
+
 import Foundation
+import AVFoundation
+import UIKit
 
 struct Constants {
     static let Request = "request"
@@ -14,6 +17,21 @@ struct Constants {
 }
 
 struct AuthenticationConstants {
-    static let HOST = ""
+    static let TENANTSERVER = ""
     static let PROJECTID = ""
+}
+
+class Common {
+    static public func isAuthorized(viewController: UIViewController) -> Bool {
+        let message = "To place calls, VDOTOK needs access to your iPhone's microphone and camara. Tap Settings and turn on microphone and camera."
+        if AVCaptureDevice.authorizationStatus(for: .audio) != .authorized {
+            ProgressHud.alertForPermission(message: message, viewController: viewController)
+            return false
+        } else if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
+            ProgressHud.alertForPermission(message: message, viewController: viewController)
+        
+            return false
+        }
+        return true
+    }
 }
