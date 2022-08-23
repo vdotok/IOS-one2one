@@ -51,6 +51,7 @@ Register at [VdoTok HomePage](https://vdotok.com) to get **TENANT TESTING SERVER
 *Please be noted that iOSSDKStreaming does not work for iOS Simulator*
 
 To run on a real device:
+  * Go to your **Main Target->Signing and Capabilities**
   * Select your Team and setup your bundle identifier like `com.company.appname`
   * Select your device from the dropdown menu in Xcode, click on play button on xcode toolbar
 
