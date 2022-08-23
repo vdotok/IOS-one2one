@@ -5,7 +5,7 @@ iOSSDKStreaming-one2one Audio/Video Call
 
 ### Requirements
 ##### System Requirements
-* OS X 11.0 or later
+* MacOS as compatible with xcode version
 * 8GB of RAM memory
    
 ##### Development Requirements
