@@ -163,13 +163,13 @@ extension ContactViewModelImpl: SDKConnectionDelegate {
 
 extension ContactViewModelImpl {
     func moveToAudio(with users: [User], viewController: UIViewController) {
-        guard Common.isAuthorized(viewController: viewController) else { return }
+      
         guard let sdk = vtokSdk else {return}
         router.moveToAudio(vtokSdk: sdk, users: users)
     }
     
     func moveToVideo(with users: [User], viewController: UIViewController) {
-        guard Common.isAuthorized(viewController: viewController) else {return}
+       
         guard let sdk = vtokSdk else {return}
         router.moveToVideo(vtokSdk: sdk, users: users)
     }
