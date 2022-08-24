@@ -10,7 +10,6 @@
 import Foundation
 import AVFoundation
 import UIKit
-import KRProgressHUD
 
 struct Constants {
     static let Request = "request"
@@ -18,8 +17,8 @@ struct Constants {
 }
 
 struct AuthenticationConstants {
-    static let HOST = "q-tenant.vdotok.dev"
-    static let PROJECTID = "6NE92I"
+    static let TENANTSERVER = ""
+    static let PROJECTID = ""
 }
 
 class Common {
