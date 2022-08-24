@@ -4,15 +4,15 @@ iOSSDKStreaming-one2one Audio/Video Call
 ## Installation
 
 ### Requirements
-##### System Requirements
-* MacOS as compatible with xcode version
-* 8GB of RAM memory
-   
+
 ##### Development Requirements
 * Xcode 13.4.1 or latest version
 * [Click here](https://developer.apple.com/xcode/resources/) to download Xcode on your Macbook
 
-
+##### System Requirements
+* MacOS as compatible with xcode version
+* 8GB of RAM memory
+   
 ### Installing Cocoapods
 Open **Terminal** and type command `pod --version` and hit **Enter**. 
 
@@ -46,7 +46,7 @@ Register at [VdoTok HomePage](https://vdotok.com) to get **TENANT TESTING SERVER
 ### Updating  Project ID and Authentication Token
 *  Get **Project ID** and **TENANT TESTING SERVER** from [Admin Panel](https://console.vdotok.com/login)
 *  Double-click to open **.xcworkspace file** in Xcode
-*  In struct AuthenticationConstants (iOS-one2one -> common -> constants), replace the values for **PROJECTID** and **TENANTSERVER** with your values
+*  In struct AuthenticationConstants **(iOS-one2one -> common -> constants)**, replace the values for **PROJECTID** and **TENANTSERVER** with your values
 
 ### Building On Device
 *Please be noted that iOSSDKStreaming does not work for iOS Simulator*
