@@ -10,7 +10,7 @@ iOSSDKStreaming-one2one Audio/Video Call
    
 ##### Development Requirements
 * Xcode 13.4.1 or latest version
-* [Click here](https://developer.apple.com/xcode/resources/) to download Xcode on your macbook.
+* [Click here](https://developer.apple.com/xcode/resources/) to download Xcode on your Macbook
 
 
 ### Installing Cocoapods
@@ -20,6 +20,7 @@ If command is not found then you don’t have Cocoapods installed on your system
 #### Installing Cocoapods
 
 * Type the following command in **Terminal** `sudo gem install cocoapods` and hit **Enter**
+*  If you face this issue **ERROR: Failed to build gem native extension**, then run `brew install cocoapods`
 * After installation is complete, type command `pod --version` and hit **Enter** to confirm installation is successful
 
 ### Project Signup and Project ID
@@ -37,7 +38,7 @@ Register at [VdoTok HomePage](https://vdotok.com) to get **TENANT TESTING SERVER
 *  Once the process is completed it should look like following
 <img width="500" alt="Screenshot 2022-08-16 at 12 11 20 PM" src="https://user-images.githubusercontent.com/111276411/185377295-4d89b167-6761-424b-aaa2-1c784e80cc62.png">
 
-*  If you face issue below,execute this command in terminal `gem install --user-install ffi -- --enable-libffi-alloc` ,then run `pod intall` 
+*  If you face issue below,execute this command in terminal `gem install --user-install ffi -- --enable-libffi-alloc` ,then run `pod install` 
       
 <img width="500" alt="Screen Shot 2022-08-22 at 5 10 37 PM" src="https://user-images.githubusercontent.com/111276411/186087301-81952093-eabf-4c3a-85f9-21f34dbd9b3f.png">
 
@@ -51,9 +52,12 @@ Register at [VdoTok HomePage](https://vdotok.com) to get **TENANT TESTING SERVER
 *Please be noted that iOSSDKStreaming does not work for iOS Simulator*
 
 To run on a real device:
+
+<img width="500" alt="Screenshot 2022-08-24 at 12 39 21 PM" src="https://user-images.githubusercontent.com/111276411/186361499-0a93fc75-db9b-4eaa-bb9a-2f14556b1051.png">
+
   * Go to your **Main Target->Signing and Capabilities**
   * Select your Team and setup your bundle identifier like `com.company.appname`
-  * Connect your device with MacBook pro
+  * Connect your device with MacBook
   * Select your device from the run destination menu in toolbar
   * Click on play button on xcode toolbar
 
