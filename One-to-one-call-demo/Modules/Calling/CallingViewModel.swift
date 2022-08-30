@@ -218,14 +218,6 @@ extension CallingViewModelImpl {
     }
     
     func acceptCall(session: VTokBaseSession, user: [User], viewController: UIViewController) {
-        guard Common.isAuthorized(viewController: viewController) else {
-            vtokSdk.reject(session: session)
-            stopSound()
-            output?(.dismissCallView)
-            return
-            
-        }
-      
         switch session.sessionMediaType {
         case .audioCall:
             output?(.loadAudioView(user: user))
