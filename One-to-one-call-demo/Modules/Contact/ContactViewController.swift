@@ -69,7 +69,8 @@ public class ContactViewController: UIViewController {
                 connectionStatusView.backgroundColor = .green
             case .socketDisconnected:
                 connectionStatusView.backgroundColor = .red
-                
+            case .authFailure(let message):
+                ProgressHud.shared.alertForPermission(message: message)
             default:
                 break
             }
@@ -122,7 +123,7 @@ extension ContactViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.moveToIncoming()
+        
     }
     public func numberOfSections(in tableView: UITableView) -> Int {
         var numOfSection: Int = 0
@@ -157,11 +158,11 @@ extension ContactViewController: UISearchBarDelegate {
 
 extension ContactViewController: ContactCellProtocol {
     func didTapVideo(user: User) {
-        viewModel.moveToVideo(with: [user], viewController: self)
+        viewModel.makeCall(with: [user], mediaType: .videoCall)
     }
     
     func didTapAudio(user: User) {
-        viewModel.moveToAudio(with: [user], viewController: self)
+        viewModel.makeCall(with: [user], mediaType: .audioCall)
     }
 
 }

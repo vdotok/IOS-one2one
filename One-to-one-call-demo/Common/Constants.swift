@@ -17,21 +17,20 @@ struct Constants {
 }
 
 struct AuthenticationConstants {
-    static let TENANTSERVER = ""
-    static let PROJECTID = ""
+    static let TENANTSERVER = "s-tenant.vdotok.dev"
+    static let PROJECTID = "19TZG5Q"
 }
 
 class Common {
-    static public func isAuthorized(viewController: UIViewController) -> Bool {
-        let message = "To place calls, VDOTOK needs access to your iPhone's microphone and camara. Tap Settings and turn on microphone and camera."
+    static public func isAuthorized(with complition: ((Bool) -> ()))  {
         if AVCaptureDevice.authorizationStatus(for: .audio) != .authorized {
-            ProgressHud.alertForPermission(message: message, viewController: viewController)
-            return false
+            complition(false)
+            return
         } else if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
-            ProgressHud.alertForPermission(message: message, viewController: viewController)
-        
-            return false
+        complition(false)
+            return
         }
-        return true
+        complition(true)
+        return
     }
 }

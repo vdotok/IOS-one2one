@@ -62,6 +62,8 @@ public class CallingViewController: UIViewController {
             break
             case .dismissCallView:
                 self.dismiss(animated: true, completion: nil)
+            case .authFailure(let message):
+                ProgressHud.shared.alertForPermission(message: message)
             }
         }
     }

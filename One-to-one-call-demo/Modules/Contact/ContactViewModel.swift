@@ -13,9 +13,7 @@ import UIKit
 typealias ContactViewModelOutput = (ContactViewModelImpl.Output) -> Void
 
 protocol ContactViewModelInput {
-    func moveToAudio(with users: [User], viewController: UIViewController)
-    func moveToVideo(with users: [User], viewController: UIViewController)
-    func moveToIncoming()
+    func makeCall(with users:[User], mediaType: SessionMediaType)
     func closeConnection()
 }
 
@@ -51,6 +49,8 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
     func viewModelDidLoad() {
         getUsers()
         configureVdotTok()
+        AVCaptureDevice.requestAccess(for: .video) { _ in}
+        AVCaptureDevice.requestAccess(for: .audio) { _ in}
     }
     
     func viewModelWillAppear() {
@@ -67,6 +67,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
         case socketDisconnected
         case failure(message: String)
         case alreadyCreated(message : String)
+        case authFailure(message: String)
     }
     
     func configureVdotTok() {
@@ -162,20 +163,23 @@ extension ContactViewModelImpl: SDKConnectionDelegate {
 }
 
 extension ContactViewModelImpl {
-    func moveToAudio(with users: [User], viewController: UIViewController) {
-      
-        guard let sdk = vtokSdk else {return}
-        router.moveToAudio(vtokSdk: sdk, users: users)
-    }
+
+    func makeCall(with users: [User], mediaType: SessionMediaType) {
+        Common.isAuthorized { status in
+            if status {
+                guard let sdk = vtokSdk else {return}
+                switch mediaType {
+                case .audioCall:
+                    router.moveToAudio(vtokSdk: sdk, users: users)
+                case .videoCall:
+                    router.moveToVideo(vtokSdk: sdk, users: users)
+                }
+                return
+            }
+            let message = "To place calls, VDOTOK needs access to your iPhone's microphone and camara. Tap Settings and turn on microphone and camera."
+            output?(.authFailure(message: message))
+        }
     
-    func moveToVideo(with users: [User], viewController: UIViewController) {
-       
-        guard let sdk = vtokSdk else {return}
-        router.moveToVideo(vtokSdk: sdk, users: users)
-    }
-    
-    func moveToIncoming() {
-        
     }
     
     func closeConnection() {
@@ -183,6 +187,3 @@ extension ContactViewModelImpl {
     }
 }
 
-extension ContactViewModelImpl {
-
-}

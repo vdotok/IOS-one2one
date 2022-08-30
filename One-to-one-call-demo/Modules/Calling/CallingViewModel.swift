@@ -83,6 +83,7 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
         case update(Session: VTokBaseSession)
         case updateState(information: StateInformation)
         case removeRemoteView
+        case authFailure(message: String)
         
         
     }
@@ -218,16 +219,24 @@ extension CallingViewModelImpl {
     }
     
     func acceptCall(session: VTokBaseSession, user: [User], viewController: UIViewController) {
-        switch session.sessionMediaType {
-        case .audioCall:
-            output?(.loadAudioView(user: user))
-        case .videoCall:
-            output?(.loadVideoView(user: user))
-      
-        }
-
-        vtokSdk.accept(session: session)
         
+        Common.isAuthorized { status in
+            if status {
+                switch session.sessionMediaType {
+                case .audioCall:
+                    output?(.loadAudioView(user: user))
+                case .videoCall:
+                    output?(.loadVideoView(user: user))
+                    
+                }
+
+                vtokSdk.accept(session: session)
+                return
+            }
+            rejectCall(session: session)
+            let message = "To place calls, VDOTOK needs access to your iPhone's microphone and camara. Tap Settings and turn on microphone and camera."
+            output?(.authFailure(message: message))
+        }
     }
     
     func setSessionDelegate() {
