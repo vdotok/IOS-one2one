@@ -74,7 +74,6 @@ class VideoDailingView: UIView {
         connectedUserName.text = users.first?.fullName
         self.users = users
         
-        
     }
     
     func update(with baseSession: VTokBaseSession) {
@@ -115,10 +114,16 @@ class VideoDailingView: UIView {
     
     func updateRemote(streams: [UserStream]) {
         guard let remoteStream = streams.filter({$0.streamDirection == .incoming}).first else {return}
-        configureRemoteView(renderer: remoteStream.renderer)
+        DispatchQueue.main.async {
+            self.configureRemoteView(renderer: remoteStream.renderer)
+        }
+        
         
         guard let localStream = streams.filter({$0.streamDirection == .outgoing}).first else {return}
-        updateLocal(view: localStream.renderer)
+        DispatchQueue.main.async {
+            self.updateLocal(view: localStream.renderer)
+        }
+    
         
     }
     
@@ -126,14 +131,18 @@ class VideoDailingView: UIView {
         for subView in remoteView.subviews {
             subView.removeFromSuperview()
         }
-        remoteView.addSubview(renderer)
-        renderer.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            renderer.leadingAnchor.constraint(equalTo: self.remoteView.leadingAnchor),
-            renderer.trailingAnchor.constraint(equalTo:self.remoteView.trailingAnchor),
-            renderer.topAnchor.constraint(equalTo: self.remoteView.topAnchor),
-            renderer.bottomAnchor.constraint(equalTo: self.remoteView.bottomAnchor)
-        ])
+        DispatchQueue.main.async {
+            self.remoteView.addSubview(renderer)
+            
+            
+            renderer.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                renderer.leadingAnchor.constraint(equalTo: self.remoteView.leadingAnchor),
+                renderer.trailingAnchor.constraint(equalTo:self.remoteView.trailingAnchor),
+                renderer.topAnchor.constraint(equalTo: self.remoteView.topAnchor),
+                renderer.bottomAnchor.constraint(equalTo: self.remoteView.bottomAnchor)
+            ])
+            }
     }
     
     func removeRemoteView() {
@@ -178,7 +187,7 @@ class VideoDailingView: UIView {
         personAvatar.isHidden = true
         cameraButton.isEnabled = true
         speakerButton.isEnabled = true
-        speakerButton.isSelected = true
+        speakerButton.isSelected = false
         if timer == nil {
             configureTimer()
         }

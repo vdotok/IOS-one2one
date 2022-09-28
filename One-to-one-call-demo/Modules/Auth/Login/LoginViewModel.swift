@@ -16,7 +16,7 @@ protocol LoginViewModelInput {
 
 protocol LoginViewModel: LoginViewModelInput {
     var output: LoginViewModelOutput? { get set}
-    
+    func moveToQRScanner()
     func viewModelDidLoad()
     func viewModelWillAppear()
 }
@@ -48,6 +48,10 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput {
         case internetConnected
         case internetNotConnected(message: String)
         case failure(message: String)
+    }
+    
+    func moveToQRScanner() {
+        router.moveToQRScanner()
     }
 }
 
@@ -82,7 +86,7 @@ extension LoginViewModelImpl {
                     break
                 }
             case .failure(let error):
-                self.output?(.failure(message: error.localizedDescription))
+                self.output?(.failure(message: ServiceError.noData.localizedDescription))
             }
         }
     }

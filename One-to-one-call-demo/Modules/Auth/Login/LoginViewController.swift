@@ -20,7 +20,6 @@ public class LoginViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-      
         configureAppearance()
         bindViewModel()
         viewModel.viewModelDidLoad()
@@ -35,6 +34,11 @@ public class LoginViewController: UIViewController {
         let builder = SignUpBuilder().build(with: UINavigationController())
         builder.modalPresentationStyle = .fullScreen
         builder.modalTransitionStyle = .crossDissolve
+        self.present(builder, animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapQRCode(_ sender: UIButton) {
+        let builder = QRScannerBuilder().build(with: UINavigationController())
         self.present(builder, animated: true, completion: nil)
     }
     

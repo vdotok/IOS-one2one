@@ -88,8 +88,8 @@ extension SignUpViewModelImpl {
                 default:
                     break
                 }
-            case .failure(let error):
-                print(error)
+            case .failure(_):
+                self.output?(.failure(message: ServiceError.noData.localizedDescription))
             }
         }
     }

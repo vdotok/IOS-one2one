@@ -44,7 +44,7 @@ class LoginService: BaseDataStore, LoginStoreable {
                 VDOTOKObject<UserResponse>().setData(response)
                 VDOTOKObject<String>().setToken(response.authToken)
             default:
-                break
+            print(response)
             }
             complition(.success(response))
 

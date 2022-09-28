@@ -13,6 +13,15 @@ enum ServiceError: Error {
     case requestEncodingError(error: Error)
 }
 
+extension ServiceError: LocalizedError {
+    public var errorDescription: String? {
+        return NSLocalizedString(
+            "Project id or tenant url not found.",
+            comment: "Resource Not Found"
+        )
+    }
+}
+
 protocol Request {
     var urlRequest: URLRequest { get }
 }
@@ -51,6 +60,7 @@ final class NetworkService: Service {
                 print(response)
             }
             guard let data = data else {
+                
                 completion(.failure(ServiceError.noData))
                 return
             }

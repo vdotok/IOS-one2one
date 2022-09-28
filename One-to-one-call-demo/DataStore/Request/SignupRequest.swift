@@ -19,7 +19,7 @@ struct SignupRequest: Codable, APIRequest {
     
     let fullName: String
     let email, password: String
-    let projectID: String = AuthenticationConstants.PROJECTID
+    let projectID: String = UserDefaults.projectId
     let deviceType: String = "ios"
     let deviceModel: String = "iPhone 8"
     let deviceOSVer: String = "13.3"

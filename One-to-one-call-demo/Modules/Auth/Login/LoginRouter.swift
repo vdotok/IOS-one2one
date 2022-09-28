@@ -18,5 +18,12 @@ class LoginRouter {
 }
 
 extension LoginRouter {
+    
+    func moveToQRScanner() {
+        
+        let module = QRScannerBuilder().build(with: self.navigationController)
+        self.navigationController?.present(module, animated: true)
+    }
+
 
 }

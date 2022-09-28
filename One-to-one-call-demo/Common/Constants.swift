@@ -16,11 +16,6 @@ struct Constants {
     static let Register = "register"
 }
 
-struct AuthenticationConstants {
-    static let TENANTSERVER = "s-tenant.vdotok.dev"
-    static let PROJECTID = "19TZG5Q"
-}
-
 class Common {
     static public func isAuthorized(with complition: ((Bool) -> ()))  {
         if AVCaptureDevice.authorizationStatus(for: .audio) != .authorized {
@@ -32,5 +27,6 @@ class Common {
         }
         complition(true)
         return
+
     }
 }

@@ -51,6 +51,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
         configureVdotTok()
         AVCaptureDevice.requestAccess(for: .video) { _ in}
         AVCaptureDevice.requestAccess(for: .audio) { _ in}
+        checkAppState()
     }
     
     func viewModelWillAppear() {
@@ -78,7 +79,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
                                       referenceID: user.refID!,
                                       authorizationToken: user.authorizationToken!,
                                       requestID: getRequestId(),
-                                      projectID: AuthenticationConstants.PROJECTID)
+                                      projectID: UserDefaults.projectId)
         self.vtokSdk = VTokSDK(url: url, registerRequest: request, connectionDelegate: self)
         
     }
@@ -93,6 +94,17 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
         let token = generatable.getUUID(string: time + tenantId + response.refID!)
         return token
         
+    }
+    
+    func checkAppState() {
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    
+    @objc func appDidBecomeActive() {
+        guard let sdk = vtokSdk else {return}
+        sdk.reRegisterSocket()
     }
 }
 

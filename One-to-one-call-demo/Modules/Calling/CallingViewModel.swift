@@ -8,7 +8,7 @@
 
 import Foundation
 import iOSSDKStreaming
-import  AVFoundation
+import AVFoundation
 
 enum CallState {
     case calling
@@ -42,7 +42,7 @@ protocol CallingViewModel: CallingViewModelInput {
 }
 
 class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
-
+    
     private let router: CallingRouter
     var output: CallingViewModelOutput?
     var screenType: ScreenType
@@ -58,6 +58,7 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
         self.vtokSdk = vtokSdk
         self.users = users
         self.session = session
+        
     }
     
     func viewModelDidLoad() {
@@ -86,6 +87,11 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
         case authFailure(message: String)
         
         
+    }
+    
+    deinit {
+        print("calling view model deinit")
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -138,7 +144,11 @@ extension CallingViewModelImpl: SessionDelegate {
     }
     
     func configureRemoteViews(for session: VTokBaseSession, with streams: [UserStream]) {
-       
+        if Thread.isMainThread {
+            print("configureRemoteViews is on main thread")
+        } else {
+            print("configureRemoteViews is not on main thread")
+        }
         output?(.updateRemoteView(session: session, streans: streams))
     }
     
@@ -229,7 +239,6 @@ extension CallingViewModelImpl {
                     output?(.loadVideoView(user: user))
                     
                 }
-
                 vtokSdk.accept(session: session)
                 return
             }

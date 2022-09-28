@@ -41,7 +41,7 @@ class AudioDailingView: UIView {
     @IBAction func didTapSpeaker(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         guard let VTokBaseSession = VTokBaseSession else {return}
-        delegate?.didTapSpeakerFor(VTokBaseSession: VTokBaseSession, state: sender.isSelected ? .onSpeaker : .onEarPiece)
+        delegate?.didTapSpeakerFor(VTokBaseSession: VTokBaseSession, state: sender.isSelected ? .onEarPiece : .onSpeaker)
     }
     
     func configure(with user: [User]) {
