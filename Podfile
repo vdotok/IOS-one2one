@@ -8,7 +8,8 @@ target 'One-to-one-call-demo' do
   # Pods for One-to-one-call-demo
   pod 'KRProgressHUD'
   pod 'IQKeyboardManagerSwift'
-pod 'ConnectStrategy', :path => '../connect_strategy'
+  pod 'InternalStrategy', :path => '../internal_strategy'
+
 
 # pod 'VdoTokStreaming', :git => 'https://github.com/vdotok/VdoTokStreaming.git'
 end
