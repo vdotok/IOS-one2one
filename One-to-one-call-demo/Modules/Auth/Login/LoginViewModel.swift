@@ -69,7 +69,7 @@ extension LoginViewModelImpl {
         }
         self.output?(.showProgress)
         let request = LoginRequest(email: email, password: password)
-        store.login(with: request) { (response) in
+         store.login(with: request) { (response) in
             self.output?(.hideProgress)
             switch response {
             case .success(let response):

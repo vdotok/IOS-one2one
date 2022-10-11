@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewController = ContactBuilder().build(with: navigationControlr)
         viewController.modalPresentationStyle = .fullScreen
         navigationControlr.setViewControllers([viewController], animated: true)
-        self.window?.rootViewController = navigationControlr
+        self.window?.rootViewController = navigationControlr 
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

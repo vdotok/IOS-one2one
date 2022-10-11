@@ -273,7 +273,7 @@ extension CallingViewModelImpl {
     }
     
     func disableVideo(session: VTokBaseSession, state: VideoState) {
-        vtokSdk.disableVideo(session: session, State: state)
+        vtokSdk.disableVideo(session: session, state: state)
     }
     
     func stopSound() {

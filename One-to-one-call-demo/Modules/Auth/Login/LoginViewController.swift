@@ -23,6 +23,8 @@ public class LoginViewController: UIViewController {
         configureAppearance()
         bindViewModel()
         viewModel.viewModelDidLoad()
+        UserDefaults.baseUrl = "d-tenant.vdotok.dev"
+        UserDefaults.projectId = "254IF57F"
     }
     
     @IBAction func didTapLogin(_ sender: UIButton) {
