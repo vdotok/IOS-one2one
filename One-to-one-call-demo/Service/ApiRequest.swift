@@ -61,6 +61,7 @@ extension APIRequest {
             print("Unable to create URL components")
             return fakeUrl
         }
+        print(url)
         return url
     }
     

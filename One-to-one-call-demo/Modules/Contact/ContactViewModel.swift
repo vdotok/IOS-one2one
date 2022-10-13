@@ -36,6 +36,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
     var contacts: [User] = []
     var searchContacts: [User] = []
     var vtokSdk: VTokSDK?
+    let user = VDOTOKObject<UserResponse>().getData()
     
     private let router: ContactRouter
     private let allUserStoreAble: AllUserStoreAble = AllUsersService(service: NetworkService())
@@ -46,13 +47,11 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
         let resultsCallback: (NatTypeResult) -> () = { [weak self] (result) in
             guard let self = self else {return}
             print("NatType Results: \n\(result)")
-            let publicAddress1 = result.aaAddressMapping.ipAddress + ":" + "\(result.aaAddressMapping.port)"
-            let publicAddress2 = result.mappedIPAndPort.ipAddress + ":" + "\(result.aaAddressMapping.port)"
-            let publicAddress3 = result.apAddressMapping.ipAddress + ":" + "\(result.apAddressMapping.port)"
-            let publicAddresses = publicAddress1 + "," + publicAddress2 + "," + publicAddress3
-            let publicAddress:[String: String] = ["publicIP": publicAddresses]
-            let natFiltering = result.natFilteringType.toString
-            let natBehaviorType = result.natBehaviorType.toString
+     
+           
+            let publicAddress =  [result.publicIps]
+            let natFiltering = result.natFilteringType.rawValue
+            let natBehaviorType = result.natBehaviorType.rawValue
             guard let user = VDOTOKObject<UserResponse>().getData(), let url = user.mediaServerMap?.completeAddress else {return}
             let request = RegisterRequest(type: Constants.Request,
                                           requestType: Constants.Register,
@@ -61,7 +60,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
                                           requestID: self.getRequestId(),
                                           projectID: UserDefaults.projectId, natFiltering: natFiltering,
                                           natBehavior: natBehaviorType,
-                                        publicIP: publicAddress)
+                                          publicIPs: publicAddress)
             
             self.configureVdotTok(request: request)
         }
@@ -86,7 +85,11 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
                 }
             //18.219.110.18
             //stun.stunprotocol.org
-            return StunClient(stunIpAddress: "18.219.110.18", stunPort: 3478 , localPort: UInt16(localPort), timeoutInMilliseconds: 500)
+//        guard let user = VDOTOKObject<UserResponse>().getData(), let host = user.stunServerMap?.host,let user.stunServerMap?.port  else {return}
+       
+        let stunIpAddress = user?.stunServerMap?.host ?? ""
+        let stunPort = user?.stunServerMap?.port ?? ""
+            return StunClient(stunIpAddress: stunIpAddress, stunPort: UInt16(stunPort)! , localPort: UInt16(localPort), timeoutInMilliseconds: 500)
                 .discoverNatType()
                 .ifNatTypeDetectingSuccessful(resultsCallback)
                 .ifWhoAmISuccessful(successCallback)

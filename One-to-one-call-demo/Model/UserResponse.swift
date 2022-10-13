@@ -16,6 +16,7 @@ struct UserResponse: Codable {
     let status, userID: Int?
     let messagingServerMap: ServerMap?
     let mediaServerMap: ServerMap?
+    let stunServerMap: ServerMap?
     
     enum CodingKeys: String, CodingKey {
         case authToken = "auth_token"
@@ -28,5 +29,6 @@ struct UserResponse: Codable {
         case userID = "user_id"
         case mediaServerMap = "media_server_map"
         case messagingServerMap = "messaging_server_map"
+        case stunServerMap = "stun_server_map"
     }
 }

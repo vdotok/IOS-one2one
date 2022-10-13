@@ -38,6 +38,7 @@ class LoginService: BaseDataStore, LoginStoreable {
     
     private func translate(data: Data, complition: loginComplition) {
         do {
+            data.printJSON()
             let response: UserResponse = try translator.decodeObject(data: data)
             switch response.status {
             case 200:
@@ -51,6 +52,17 @@ class LoginService: BaseDataStore, LoginStoreable {
         }
         catch {
             complition(.failure(error))
+        }
+    }
+}
+
+extension Data
+{
+    func printJSON()
+    {
+        if let JSONString = String(data: self, encoding: String.Encoding.utf8)
+        {
+            print(JSONString)
         }
     }
 }

@@ -37,6 +37,7 @@ class AllUsersService:BaseDataStore, AllUserStoreAble {
     }
     private func translate(data: Data, complition: AllUserComplition) {
         do {
+           
             let response: AllUsersResponse = try translator.decodeObject(data: data)
             complition(.success(response))
         }

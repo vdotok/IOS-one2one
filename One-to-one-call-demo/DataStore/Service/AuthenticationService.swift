@@ -27,7 +27,8 @@ struct AuthenticateResponse: Codable {
 struct ServerMap: Codable {
     let completeAddress: String
     let endPoint: String?
-    let host, port, serverMapProtocol: String
+    let host, port: String
+    let serverMapProtocol: String?
 
     enum CodingKeys: String, CodingKey {
         case completeAddress = "complete_address"
