@@ -30,6 +30,7 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput {
     init(router: LoginRouter, store: LoginStoreable = LoginService(service: NetworkService())) {
         self.router = router
         self.store = store
+   
     }
     
     func viewModelDidLoad() {

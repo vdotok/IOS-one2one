@@ -51,16 +51,16 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
             let publicAddress3 = result.apAddressMapping.ipAddress + ":" + "\(result.apAddressMapping.port)"
             let publicAddresses = publicAddress1 + "," + publicAddress2 + "," + publicAddress3
             let publicAddress:[String: String] = ["publicIP": publicAddresses]
-            let natFiltering = result.natFilteringType
-            let natBehaviorType = result.natBehaviorType
+            let natFiltering = result.natFilteringType.toString
+            let natBehaviorType = result.natBehaviorType.toString
             guard let user = VDOTOKObject<UserResponse>().getData(), let url = user.mediaServerMap?.completeAddress else {return}
             let request = RegisterRequest(type: Constants.Request,
                                           requestType: Constants.Register,
                                           referenceID: user.refID!,
                                           authorizationToken: user.authorizationToken!,
                                           requestID: self.getRequestId(),
-                                          projectID: UserDefaults.projectId, natFiltering: natFiltering.rawValue,
-                                          natBehavior: natBehaviorType.rawValue,
+                                          projectID: UserDefaults.projectId, natFiltering: natFiltering,
+                                          natBehavior: natBehaviorType,
                                         publicIP: publicAddress)
             
             self.configureVdotTok(request: request)
@@ -129,7 +129,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
     func configureVdotTok(request: RegisterRequest) {
         
         guard let user = VDOTOKObject<UserResponse>().getData(), let url = user.mediaServerMap?.completeAddress else {return}
-        self.vtokSdk = VTokSDK(url: url, registerRequest: request, connectionDelegate: self)
+        self.vtokSdk = VTokSDK(url: "wss://r-signalling.vdotok.dev:8443/call", registerRequest: request, connectionDelegate: self)
         
     }
     
