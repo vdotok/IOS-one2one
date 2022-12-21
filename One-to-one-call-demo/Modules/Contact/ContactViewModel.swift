@@ -58,9 +58,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
                                           referenceID: user.refID!,
                                           authorizationToken: user.authorizationToken!,
                                           requestID: self.getRequestId(),
-                                          projectID: UserDefaults.projectId, natFiltering: natFiltering,
-                                          natBehavior: natBehaviorType,
-                                          publicIPs: publicAddress)
+                                          projectID: UserDefaults.projectId)
             
             self.configureVdotTok(request: request)
         }
