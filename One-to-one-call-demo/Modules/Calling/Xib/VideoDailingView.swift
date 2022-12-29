@@ -16,6 +16,7 @@ protocol VideoDelegate: AnyObject {
     func didTapEnd(for baseSession: VTokBaseSession)
     func didTapFlip(for baseSession: VTokBaseSession, type: CameraType)
     func didTapSpeaker(baseSession: VTokBaseSession, state: SpeakerState)
+    func defaultSpeaker(baseSession: VTokBaseSession, state: SpeakerState)
 }
 
 class VideoDailingView: UIView {
@@ -85,7 +86,6 @@ class VideoDailingView: UIView {
         case .calling:
             configureTryingState()
         case .connected:
-            
             configureConnectedState()
         case .ringing:
             configureRinginState()
@@ -114,11 +114,13 @@ class VideoDailingView: UIView {
     }
     
     func updateRemote(streams: [UserStream]) {
+        
         guard let remoteStream = streams.filter({$0.streamDirection == .incoming}).first else {return}
         configureRemoteView(renderer: remoteStream.renderer)
         
         guard let localStream = streams.filter({$0.streamDirection == .outgoing}).first else {return}
         updateLocal(view: localStream.renderer)
+        print("remote \(remoteStream) hello local ->\(localStream) bye")
         
     }
     
@@ -179,6 +181,10 @@ class VideoDailingView: UIView {
         cameraButton.isEnabled = true
         speakerButton.isEnabled = true
         speakerButton.isSelected = true
+        guard let baseSession = session else {return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            self.delegate?.defaultSpeaker(baseSession: baseSession, state: .onSpeaker)
+        }
         if timer == nil {
             configureTimer()
         }
