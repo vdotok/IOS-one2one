@@ -68,7 +68,6 @@ class VideoDailingView: UIView {
         sender.isSelected = !sender.isSelected
         guard let baseSession = session else {return }
         delegate?.didTapSpeaker(baseSession: baseSession , state: sender.isSelected ? .onSpeaker : .onEarPiece)
-        print("check ->>>\(session?.sessionUUID)")
     }
     
     func configure( users: [User]) {
@@ -121,8 +120,6 @@ class VideoDailingView: UIView {
         
         guard let localStream = streams.filter({$0.streamDirection == .outgoing}).first else {return}
         updateLocal(view: localStream.renderer)
-        print("remote \(remoteStream) hello local ->\(localStream) bye")
-        
     }
     
     func configureRemoteView(renderer: UIView) {
