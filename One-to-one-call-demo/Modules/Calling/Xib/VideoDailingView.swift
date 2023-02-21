@@ -68,6 +68,7 @@ class VideoDailingView: UIView {
         sender.isSelected = !sender.isSelected
         guard let baseSession = session else {return }
         delegate?.didTapSpeaker(baseSession: baseSession , state: sender.isSelected ? .onSpeaker : .onEarPiece)
+        print("check ->>>\(session?.sessionUUID)")
     }
     
     func configure( users: [User]) {
