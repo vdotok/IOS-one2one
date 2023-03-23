@@ -38,6 +38,13 @@ public class LoginViewController: UIViewController {
         self.present(builder, animated: true, completion: nil)
     }
     
+    @IBAction func didTapQRCode(_ sender: Any) {
+        let builder = QRScannerBuilder().build(with: UINavigationController())
+        builder.modalPresentationStyle = .fullScreen
+        builder.modalTransitionStyle = .crossDissolve
+        self.present(builder, animated: true, completion: nil)
+    }
+    
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewModelWillAppear()
