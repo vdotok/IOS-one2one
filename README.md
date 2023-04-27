@@ -23,9 +23,6 @@ If command is not found then you don’t have Cocoapods installed on your system
 * If you face this issue **ERROR: Failed to build gem native extension**, then run `brew install cocoapods`
 * After installation is complete, type command `pod --version` and hit **Enter** to confirm installation is successful
 
-### Project Signup and Project ID
-Register at [VdoTok HomePage](https://vdotok.com) to get **TENANT TESTING SERVER** and **PROJECT ID**
-
 ### Code Setup
 *	On VdoTok Github repo,click on **Code** button 
 *	From HTTPS section, copy **repo URL**
@@ -43,10 +40,10 @@ Register at [VdoTok HomePage](https://vdotok.com) to get **TENANT TESTING SERVER
 <img width="500" alt="Screen Shot 2022-08-22 at 5 10 37 PM" src="https://user-images.githubusercontent.com/111276411/186087301-81952093-eabf-4c3a-85f9-21f34dbd9b3f.png">
 
 
-### Updating  Project ID and Authentication Token
-*  Get **Project ID** and **TENANT TESTING SERVER** from [Admin Panel](https://console.vdotok.com/login)
+### Project Signup and Project ID
+*  Register at [VdoTok HomePage](https://vdotok.com) to get **TENANT TESTING SERVER** and **PROJECT ID**
 *  Double-click to open **.xcworkspace file** in Xcode
-*  In struct AuthenticationConstants **(iOS-one2one -> common -> constants)**, replace the values for **PROJECTID** and **TENANTSERVER** with your values
+*  In struct AuthenticationConstants **(iOS-one2one -> common -> constants)**, replace the values for **PROJECTID** and **TENANTSERVER** ( without `https://` ) with your values
 
 ### Building On Device
 *Please be noted that iOSSDKStreaming does not work for iOS Simulator*
