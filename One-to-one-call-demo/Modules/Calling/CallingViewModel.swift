@@ -52,6 +52,8 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
     var session: VTokBaseSession?
     var player: AVAudioPlayer?
     var isBusy: Bool = false
+    var counter = 0
+    var timer = Timer()
     
     init(router: CallingRouter, screenType: ScreenType, vtokSdk: VTokSDK, users: [User]? = nil, session: VTokBaseSession? = nil) {
         self.router = router
@@ -105,6 +107,7 @@ extension CallingViewModelImpl {
             guard let baseSession = session else {return}
             output?(.loadIncomignCall(user: users, session: baseSession))
             playSound()
+            callHangupHandling()
         }
     }
     
@@ -152,6 +155,8 @@ extension CallingViewModelImpl: SessionDelegate {
         case .ringing:
             output?(.update(Session: session))
         case .connected:
+            timer.invalidate()
+            counter = 0
             stopSound()
             switch session.sessionMediaType {
             case .audioCall:
@@ -217,6 +222,35 @@ extension CallingViewModelImpl {
         vtokSdk.reject(session: session)
         output?(.dismissCallView)
         stopSound()
+    }
+    
+    func callHangupHandling() {
+        timer.invalidate()
+        counter = 0
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: #selector(timerAction),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc func timerAction() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            self.counter += 1
+            if self.counter > 30 {
+                guard let session = self.session else {return}
+                self.counter = 0
+                self.timer.invalidate()
+                switch session.sessionDirection {
+                case .incoming:
+                    self.vtokSdk.reject(session: session)
+                    self.output?(.dismissCallView)
+                case .outgoing:
+                    self.vtokSdk.hangup(session: session)
+                }
+            }
+        }
     }
     
     func acceptCall(session: VTokBaseSession, user: [User], viewController: UIViewController) {

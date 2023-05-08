@@ -22,7 +22,7 @@ protocol ContactViewModel: ContactViewModelInput {
     var contacts: [User] {get set}
     var searchContacts: [User] {get set}
     var isSearching: Bool {get set}
-   
+    func getUsersReload()
     func viewModelDidLoad()
     func viewModelWillAppear()
     func rowsCount() -> Int
@@ -141,6 +141,10 @@ extension ContactViewModelImpl {
     func filterGroups(with text: String) {
         self.searchContacts = contacts.filter({$0.fullName.lowercased().prefix(text.count) == text.lowercased()})
         output?(.reload)
+    }
+    
+    func getUsersReload() {
+        getUsers()
     }
 
 }
