@@ -93,7 +93,8 @@ class VideoDailingView: UIView {
             configureInvalidState()
         case .insufficientBalance:
             configureInsufficientBalance()
-            
+        case .temporaryUnAvailable:
+            configureTemporaryUnavailable()
         default:
             break
         }
@@ -145,6 +146,13 @@ class VideoDailingView: UIView {
     private func configureInsufficientBalance() {
         timeLabel.isHidden = true
         callState.text = "Insufficient funds..."
+        tryingStack.isHidden = false
+        connectedStack.isHidden = true
+    }
+    
+    private func configureTemporaryUnavailable() {
+        timeLabel.isHidden = true
+        callState.text = "Temporary UnAvailable User..."
         tryingStack.isHidden = false
         connectedStack.isHidden = true
     }

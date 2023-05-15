@@ -88,7 +88,6 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
         case removeRemoteView
         case authFailure(message: String)
         
-        
     }
 }
 
@@ -105,6 +104,7 @@ extension CallingViewModelImpl {
             callToParticipants(with: .videoCall)
         case .incomingCall:
             guard let baseSession = session else {return}
+            VdotokShare.shared.setSession(session:baseSession)
             output?(.loadIncomignCall(user: users, session: baseSession))
             playSound()
             callHangupHandling()
@@ -118,6 +118,7 @@ extension CallingViewModelImpl {
         let requestID = getRequestId()
         let customData = SessionCustomData(calleName: user.fullName, groupName: nil, groupAutoCreatedValue: nil)
         let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUuid: requestID, sessionMediaType: mediaType ,callType: .onetoone, data: customData)
+        VdotokShare.shared.setSession(session:session)
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     
@@ -152,8 +153,14 @@ extension CallingViewModelImpl: SessionDelegate {
     
     func stateDidUpdate(for session: VTokBaseSession) {
         switch session.state {
+
         case .ringing:
             output?(.update(Session: session))
+        case .temporaryUnAvailable:
+            output?(.update(Session: session))
+            DispatchQueue.main.async {[weak self] in
+                self?.output?(.dismissCallView)
+            }
         case .connected:
             timer.invalidate()
             counter = 0
@@ -165,9 +172,13 @@ extension CallingViewModelImpl: SessionDelegate {
                 output?(.update(Session: session))
             }
         case .rejected:
+            timer.invalidate()
+            counter = 0
             output?(.dismissCallView)
             stopSound()
         case .missedCall:
+            timer.invalidate()
+            counter = 0
             DispatchQueue.main.async {[weak self] in
                 self?.output?(.dismissCallView)
             }

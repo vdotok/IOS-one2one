@@ -80,6 +80,7 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
                                       requestId: getRequestId(),
                                       projectId: AuthenticationConstants.PROJECTID)
         self.vtokSdk = VTokSDK(url: url, registerRequest: request, connectionDelegate: self)
+        VdotokShare.shared.setSdk(sdk: self.vtokSdk!)
         
     }
     

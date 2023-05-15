@@ -68,9 +68,18 @@ class AudioDailingView: UIView {
             break
         case .insufficientBalance:
             configureInsufficientBalance()
+        case .temporaryUnAvailable:
+            configureTemporaryUnAvailable()
         default:
         break
         }
+    }
+    
+    private func configureTemporaryUnAvailable() {
+        callTime.isHidden = true
+        callState.text = "Temporary UnAvailable User..."
+        tryingStack.isHidden = false
+        connectedStack.isHidden = true
     }
     
     private func configureInsufficientBalance() {
