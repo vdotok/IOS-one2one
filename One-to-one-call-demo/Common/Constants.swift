@@ -22,16 +22,15 @@ struct AuthenticationConstants {
 }
 
 class Common {
-    static public func isAuthorized(viewController: UIViewController) -> Bool {
-        let message = "To place calls, VDOTOK needs access to your iPhone's microphone and camara. Tap Settings and turn on microphone and camera."
+    static public func isAuthorized(with complition: ((Bool) -> ()))  {
         if AVCaptureDevice.authorizationStatus(for: .audio) != .authorized {
-            ProgressHud.alertForPermission(message: message, viewController: viewController)
-            return false
+            complition(false)
+            return
         } else if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
-            ProgressHud.alertForPermission(message: message, viewController: viewController)
-        
-            return false
+        complition(false)
+            return
         }
-        return true
+        complition(true)
+        return
     }
 }

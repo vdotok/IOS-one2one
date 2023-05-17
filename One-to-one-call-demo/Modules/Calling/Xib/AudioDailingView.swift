@@ -12,6 +12,7 @@ protocol AudioDelegate: AnyObject {
     func didTapHangUp(VTokBaseSession: VTokBaseSession)
     func didTapMuteFor(VTokBaseSession: VTokBaseSession, state: AudioState)
     func didTapSpeakerFor(VTokBaseSession: VTokBaseSession, state: SpeakerState)
+    func defaultSpeaker(VTokBaseSession: VTokBaseSession, state: SpeakerState)
 }
 
 class AudioDailingView: UIView {
@@ -67,9 +68,18 @@ class AudioDailingView: UIView {
             break
         case .insufficientBalance:
             configureInsufficientBalance()
+        case .temporaryUnAvailable:
+            configureTemporaryUnAvailable()
         default:
         break
         }
+    }
+    
+    private func configureTemporaryUnAvailable() {
+        callTime.isHidden = true
+        callState.text = "Temporary UnAvailable User..."
+        tryingStack.isHidden = false
+        connectedStack.isHidden = true
     }
     
     private func configureInsufficientBalance() {
@@ -106,6 +116,10 @@ class AudioDailingView: UIView {
         tryingStack.isHidden = true
         connectedStack.isHidden = false
         speakerButton.isSelected = false
+        guard let baseSession = VTokBaseSession else {return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            self.delegate?.defaultSpeaker(VTokBaseSession: baseSession, state: .onEarPiece)
+        }
         if timer == nil {
             configureTimer()
         }

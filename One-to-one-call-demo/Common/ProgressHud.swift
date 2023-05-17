@@ -11,6 +11,13 @@ import UIKit
 import KRProgressHUD
 
 class ProgressHud {
+   static let shared: ProgressHud = ProgressHud()
+    private init() {}
+    
+    let windowScene = UIApplication.shared
+        .windows[0].windowScene
+    var popupWindow: UIWindow?
+    let viewController = UIViewController()
     
     static func showError(message: String, viewController: UIViewController) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -18,21 +25,31 @@ class ProgressHud {
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    static func alertForPermission(message: String,viewController: UIViewController) {
+     func alertForPermission(message: String) {
         let alert = UIAlertController(title: message, message: "", preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default))
-        alert.addAction(UIAlertAction(title: "Settings", style: .cancel) { (alert) -> Void in
+         alert.addAction(UIAlertAction(title: "Cancel", style: .default) {  [weak self]_ in
+             guard let self = self else {return}
+             self.popupWindow = nil
+         })
+        alert.addAction(UIAlertAction(title: "Settings", style: .cancel) { [weak self] (alert) -> Void in
+            guard let self = self else {return}
             if let appSettings = URL(string: UIApplication.openSettingsURLString + Bundle.main.bundleIdentifier!) {
                 if UIApplication.shared.canOpenURL(appSettings) {
                     UIApplication.shared.open(appSettings)
                 }
             }
+            self.popupWindow = nil
         })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
-        }
-        
+         if let windowScene = windowScene  {
+             popupWindow = UIWindow(windowScene: windowScene)
+             popupWindow?.frame = UIScreen.main.bounds
+             popupWindow?.backgroundColor = .clear
+             popupWindow?.windowLevel = UIWindow.Level.statusBar + 1
+             popupWindow?.rootViewController = self.viewController
+             popupWindow?.makeKeyAndVisible()
+             popupWindow?.rootViewController?.present(alert, animated: true)
+         }
         
     }
     

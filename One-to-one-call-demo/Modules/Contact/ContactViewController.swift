@@ -17,6 +17,7 @@ public class ContactViewController: UIViewController {
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var userName: UILabel!
+    lazy var refreshControl = UIRefreshControl()
     @IBOutlet weak var connectionStatusView: UIView! {
         didSet {
             connectionStatusView.layer.cornerRadius = connectionStatusView.frame.width/2
@@ -64,12 +65,14 @@ public class ContactViewController: UIViewController {
                     ProgressHud.showError(message: message, viewController: self)
                 }
             case .reload:
+                self.refreshControl.endRefreshing()
                 tableView.reloadData()
             case .socketConnected:
                 connectionStatusView.backgroundColor = .green
             case .socketDisconnected:
                 connectionStatusView.backgroundColor = .red
-                
+            case .authFailure(let message):
+                ProgressHud.shared.alertForPermission(message: message)
             default:
                 break
             }
@@ -94,6 +97,13 @@ extension ContactViewController {
         registerCell()
         guard let user = VDOTOKObject<UserResponse>().getData() else {return}
         userName.text = user.fullName
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+       }
+      
+    @objc func refresh() {
+       viewModel.getUsersReload()
     }
     
     private func registerCell() {
@@ -122,7 +132,7 @@ extension ContactViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.moveToIncoming()
+        
     }
     public func numberOfSections(in tableView: UITableView) -> Int {
         var numOfSection: Int = 0
@@ -157,11 +167,11 @@ extension ContactViewController: UISearchBarDelegate {
 
 extension ContactViewController: ContactCellProtocol {
     func didTapVideo(user: User) {
-        viewModel.moveToVideo(with: [user], viewController: self)
+        viewModel.makeCall(with: [user], mediaType: .videoCall)
     }
     
     func didTapAudio(user: User) {
-        viewModel.moveToAudio(with: [user], viewController: self)
+        viewModel.makeCall(with: [user], mediaType: .audioCall)
     }
 
 }

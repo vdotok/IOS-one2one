@@ -30,6 +30,7 @@ protocol CallingViewModelInput {
     func mute(session: VTokBaseSession, state: AudioState)
     func speaker(session: VTokBaseSession, state: SpeakerState)
     func disableVideo(session: VTokBaseSession, state: VideoState)
+    func defaultSpeaker(session: VTokBaseSession, state: SpeakerState)
     
     
 }
@@ -51,6 +52,8 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
     var session: VTokBaseSession?
     var player: AVAudioPlayer?
     var isBusy: Bool = false
+    var counter = 0
+    var timer = Timer()
     
     init(router: CallingRouter, screenType: ScreenType, vtokSdk: VTokSDK, users: [User]? = nil, session: VTokBaseSession? = nil) {
         self.router = router
@@ -83,7 +86,7 @@ class CallingViewModelImpl: CallingViewModel, CallingViewModelInput {
         case update(Session: VTokBaseSession)
         case updateState(information: StateInformation)
         case removeRemoteView
-        
+        case authFailure(message: String)
         
     }
 }
@@ -101,8 +104,10 @@ extension CallingViewModelImpl {
             callToParticipants(with: .videoCall)
         case .incomingCall:
             guard let baseSession = session else {return}
+            VdotokShare.shared.setSession(session:baseSession)
             output?(.loadIncomignCall(user: users, session: baseSession))
             playSound()
+            callHangupHandling()
         }
     }
     
@@ -112,7 +117,8 @@ extension CallingViewModelImpl {
         let refIds = users.map({$0.refID})
         let requestID = getRequestId()
         let customData = SessionCustomData(calleName: user.fullName, groupName: nil, groupAutoCreatedValue: nil)
-        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUUID: requestID, sessionMediaType: mediaType ,callType: .onetoone, data: customData)
+        let session = VTokBaseSessionInit(from: refID, to: refIds, sessionUuid: requestID, sessionMediaType: mediaType ,callType: .onetoone, data: customData)
+        VdotokShare.shared.setSession(session:session)
         vtokSdk.initiate(session: session, sessionDelegate: self)
     }
     
@@ -147,9 +153,17 @@ extension CallingViewModelImpl: SessionDelegate {
     
     func stateDidUpdate(for session: VTokBaseSession) {
         switch session.state {
+
         case .ringing:
             output?(.update(Session: session))
+        case .temporaryUnAvailable:
+            output?(.update(Session: session))
+            DispatchQueue.main.async {[weak self] in
+                self?.output?(.dismissCallView)
+            }
         case .connected:
+            timer.invalidate()
+            counter = 0
             stopSound()
             switch session.sessionMediaType {
             case .audioCall:
@@ -158,9 +172,13 @@ extension CallingViewModelImpl: SessionDelegate {
                 output?(.update(Session: session))
             }
         case .rejected:
+            timer.invalidate()
+            counter = 0
             output?(.dismissCallView)
             stopSound()
         case .missedCall:
+            timer.invalidate()
+            counter = 0
             DispatchQueue.main.async {[weak self] in
                 self?.output?(.dismissCallView)
             }
@@ -217,17 +235,54 @@ extension CallingViewModelImpl {
         stopSound()
     }
     
-    func acceptCall(session: VTokBaseSession, user: [User], viewController: UIViewController) {
-        switch session.sessionMediaType {
-        case .audioCall:
-            output?(.loadAudioView(user: user))
-        case .videoCall:
-            output?(.loadVideoView(user: user))
-      
+    func callHangupHandling() {
+        timer.invalidate()
+        counter = 0
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: #selector(timerAction),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc func timerAction() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            self.counter += 1
+            if self.counter > 30 {
+                guard let session = self.session else {return}
+                self.counter = 0
+                self.timer.invalidate()
+                switch session.sessionDirection {
+                case .incoming:
+                    self.vtokSdk.reject(session: session)
+                    self.output?(.dismissCallView)
+                case .outgoing:
+                    self.vtokSdk.hangup(session: session)
+                }
+            }
         }
-
-        vtokSdk.accept(session: session)
+    }
+    
+    func acceptCall(session: VTokBaseSession, user: [User], viewController: UIViewController) {
         
+        Common.isAuthorized { status in
+            if status {
+                switch session.sessionMediaType {
+                case .audioCall:
+                    output?(.loadAudioView(user: user))
+                case .videoCall:
+                    output?(.loadVideoView(user: user))
+                    
+                }
+
+                vtokSdk.accept(session: session)
+                return
+            }
+            rejectCall(session: session)
+            let message = "To place calls, VDOTOK needs access to your iPhone's microphone and camara. Tap Settings and turn on microphone and camera."
+            output?(.authFailure(message: message))
+        }
     }
     
     func setSessionDelegate() {
@@ -256,6 +311,10 @@ extension CallingViewModelImpl {
     
     func disableVideo(session: VTokBaseSession, state: VideoState) {
         vtokSdk.disableVideo(session: session, State: state)
+    }
+    
+    func defaultSpeaker(session: VTokBaseSession, state: SpeakerState) {
+        vtokSdk.speaker(session: session, state: state)
     }
     
     func stopSound() {
