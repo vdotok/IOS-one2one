@@ -6,7 +6,7 @@ iOSSDKStreaming-one2one Audio/Video Call
 ### Requirements
 
 ##### Development Requirements
-* Xcode 13.4.1 or latest version
+* Xcode 14.3 or latest version
 * [Click here](https://developer.apple.com/xcode/resources/) to download Xcode on your Macbook
 
 ##### System Requirements
