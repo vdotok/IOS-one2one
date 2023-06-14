@@ -27,6 +27,7 @@ class AudioDailingView: UIView {
     private var counter: Int = 0
     private weak var timer: Timer?
     var VTokBaseSession: VTokBaseSession?
+    @IBOutlet weak var micButton: UIButton!
     
     @IBAction func didTapEnd(_ sender: UIButton) {
         guard let VTokBaseSession = VTokBaseSession else {return}
@@ -116,6 +117,8 @@ class AudioDailingView: UIView {
         tryingStack.isHidden = true
         connectedStack.isHidden = false
         speakerButton.isSelected = false
+        speakerButton.isHidden = false
+        micButton.isEnabled = true
         guard let baseSession = VTokBaseSession else {return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.delegate?.defaultSpeaker(VTokBaseSession: baseSession, state: .onEarPiece)
@@ -128,6 +131,10 @@ class AudioDailingView: UIView {
         callTime.isHidden = true
         callState.text = "Ringing..."
         speakerButton.isSelected = false
+        tryingStack.isHidden = false
+        connectedStack.isHidden = true
+        speakerButton.isHidden = true
+        micButton.isEnabled = false
     }
     
     private func configureTimer() {
