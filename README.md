@@ -20,7 +20,7 @@ If command is not found then you don’t have Cocoapods installed on your system
 #### Installing Cocoapods
 
 * Type the following command in **Terminal** `sudo gem install cocoapods` and hit **Enter**
-* If you face this issue **ERROR: Failed to build gem native extension**, then run `brew install cocoapods`
+* If you face this issue **ERROR: Failed to build gem native extension**, then run `brew install cocoapods`. [Click here](https://brew.sh/) to install **brew**
 * After installation is complete, type command `pod --version` and hit **Enter** to confirm installation is successful
 
 ### Code Setup
