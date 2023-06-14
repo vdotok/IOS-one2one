@@ -21,7 +21,8 @@ protocol VideoDelegate: AnyObject {
 
 class VideoDailingView: UIView {
     
-    @IBOutlet weak var localView: DraggableView! 
+    @IBOutlet weak var muteButton: UIButton!
+    @IBOutlet weak var localView: DraggableView!
     @IBOutlet weak var remoteView: UIView!
     @IBOutlet weak var tryingStack: UIStackView!
     @IBOutlet weak var connectedStack: UIStackView!
@@ -32,6 +33,7 @@ class VideoDailingView: UIView {
     @IBOutlet weak var personAvatar: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var speakerButton: UIButton!
+    @IBOutlet weak var camButton: UIButton!
     
     weak var delegate: VideoDelegate?
     var session: VTokBaseSession?
@@ -148,6 +150,11 @@ class VideoDailingView: UIView {
         callState.text = "Insufficient funds..."
         tryingStack.isHidden = false
         connectedStack.isHidden = true
+        cameraButton.isEnabled = false
+        speakerButton.isEnabled = false
+        cameraButton.isHidden = true
+        speakerButton.isHidden = true
+        muteButton.isEnabled = false
     }
     
     private func configureTemporaryUnavailable() {
@@ -155,6 +162,11 @@ class VideoDailingView: UIView {
         callState.text = "Temporary UnAvailable User..."
         tryingStack.isHidden = false
         connectedStack.isHidden = true
+        cameraButton.isEnabled = false
+        speakerButton.isEnabled = false
+        cameraButton.isHidden = true
+        speakerButton.isHidden = true
+        muteButton.isEnabled = false
     }
     
     private func configureInvalidState() {
@@ -162,12 +174,24 @@ class VideoDailingView: UIView {
         callState.text = "Invalid target..."
         tryingStack.isHidden = false
         connectedStack.isHidden = true
+        cameraButton.isEnabled = false
+        speakerButton.isEnabled = false
+        cameraButton.isHidden = true
+        speakerButton.isHidden = true
+        muteButton.isEnabled = false
+        camButton.isEnabled = false
     }
     private func configureBusyState() {
         timeLabel.isHidden = true
         callState.text = "User busy..."
         tryingStack.isHidden = false
         connectedStack.isHidden = true
+        cameraButton.isEnabled = false
+        speakerButton.isEnabled = false
+        cameraButton.isHidden = true
+        speakerButton.isHidden = true
+        muteButton.isEnabled = false
+        camButton.isEnabled = false
     }
     
     private func configureTryingState() {
@@ -177,6 +201,10 @@ class VideoDailingView: UIView {
         connectedStack.isHidden = true
         cameraButton.isEnabled = false
         speakerButton.isEnabled = false
+        cameraButton.isHidden = true
+        speakerButton.isHidden = true
+        muteButton.isEnabled = false
+        camButton.isEnabled = false
     }
     
     private func configureConnectedState() {
@@ -187,6 +215,10 @@ class VideoDailingView: UIView {
         cameraButton.isEnabled = true
         speakerButton.isEnabled = true
         speakerButton.isSelected = true
+        cameraButton.isHidden = false
+        speakerButton.isHidden = false
+        muteButton.isEnabled = true
+        camButton.isEnabled = true
         guard let baseSession = session else {return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.delegate?.defaultSpeaker(baseSession: baseSession, state: .onSpeaker)
@@ -199,6 +231,14 @@ class VideoDailingView: UIView {
     private func configureRinginState() {
         timeLabel.isHidden = true
         callState.text = "Ringing..."
+        tryingStack.isHidden = false
+        connectedStack.isHidden = true
+        cameraButton.isEnabled = false
+        speakerButton.isEnabled = false
+        cameraButton.isHidden = true
+        speakerButton.isHidden = true
+        muteButton.isEnabled = false
+        camButton.isEnabled = false
     }
     
     
