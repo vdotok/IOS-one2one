@@ -31,6 +31,13 @@ public class LoginViewController: UIViewController {
         viewModel.loginUser(with: userName, password)
     }
     
+    @IBAction func didTapScanner(_ sender: UIButton) {
+            let builder = QRScannerBuilder().build(with: UINavigationController())
+            builder.modalPresentationStyle = .fullScreen
+            builder.modalTransitionStyle = .crossDissolve
+            self.present(builder, animated: true, completion: nil)
+    }
+    
     @IBAction func didTapRegister(_ sender: UIButton) {
         let builder = SignUpBuilder().build(with: UINavigationController())
         builder.modalPresentationStyle = .fullScreen

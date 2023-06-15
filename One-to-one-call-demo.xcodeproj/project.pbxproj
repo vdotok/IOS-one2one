@@ -3,12 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		18BBB01B2680C65200F20275 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBB01A2680C65200F20275 /* DraggableView.swift */; };
 		18D01BC6268496E000DE549A /* Swift+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D01BC5268496E000DE549A /* Swift+Extensions.swift */; };
+		499D2E022A3B1A97004431AB /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D2E012A3B1A97004431AB /* AuthenticationModel.swift */; };
+		499D2E092A3B204E004431AB /* QRScannerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D2E042A3B204D004431AB /* QRScannerBuilder.swift */; };
+		499D2E0A2A3B204E004431AB /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D2E052A3B204D004431AB /* QRScannerViewController.swift */; };
+		499D2E0B2A3B204E004431AB /* QRScanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499D2E062A3B204D004431AB /* QRScanner.storyboard */; };
+		499D2E0C2A3B204E004431AB /* QRScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D2E072A3B204E004431AB /* QRScannerRouter.swift */; };
+		499D2E0D2A3B204E004431AB /* QRScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D2E082A3B204E004431AB /* QRScannerViewModel.swift */; };
 		49F12F032A11FB34008E8552 /* VdotokShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F12F022A11FB34008E8552 /* VdotokShare.swift */; };
 		5D09DFF9266FC48400867722 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D09DFF8266FC48400867722 /* Colors.xcassets */; };
 		5D09DFFE266FC77100867722 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D09DFFD266FC77100867722 /* ProgressHud.swift */; };
@@ -117,6 +123,12 @@
 /* Begin PBXFileReference section */
 		18BBB01A2680C65200F20275 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		18D01BC5268496E000DE549A /* Swift+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Extensions.swift"; sourceTree = "<group>"; };
+		499D2E012A3B1A97004431AB /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		499D2E042A3B204D004431AB /* QRScannerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerBuilder.swift; sourceTree = "<group>"; };
+		499D2E052A3B204D004431AB /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		499D2E062A3B204D004431AB /* QRScanner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRScanner.storyboard; sourceTree = "<group>"; };
+		499D2E072A3B204E004431AB /* QRScannerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerRouter.swift; sourceTree = "<group>"; };
+		499D2E082A3B204E004431AB /* QRScannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewModel.swift; sourceTree = "<group>"; };
 		49F12F022A11FB34008E8552 /* VdotokShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VdotokShare.swift; sourceTree = "<group>"; };
 		5D09DFF8266FC48400867722 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5D09DFFD266FC77100867722 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
@@ -228,6 +240,18 @@
 				18D01BC5268496E000DE549A /* Swift+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		499D2E032A3B2022004431AB /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				499D2E062A3B204D004431AB /* QRScanner.storyboard */,
+				499D2E042A3B204D004431AB /* QRScannerBuilder.swift */,
+				499D2E072A3B204E004431AB /* QRScannerRouter.swift */,
+				499D2E052A3B204D004431AB /* QRScannerViewController.swift */,
+				499D2E082A3B204E004431AB /* QRScannerViewModel.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		4F23FAD1E79456D647AEDA8D /* Pods */ = {
@@ -386,6 +410,7 @@
 		5DBBF740266FC0000086ED93 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				499D2E032A3B2022004431AB /* QRCode */,
 				5DE554A22670A2400025B081 /* Calling */,
 				5D09E071266FFCFB00867722 /* Contact */,
 				5DBBF741266FC00D0086ED93 /* Auth */,
@@ -477,6 +502,7 @@
 				5DBBF783266FC23B0086ED93 /* UserResponse.swift */,
 				5D09E004266FC80400867722 /* CheckUsernameRepsonse.swift */,
 				5D09E07E266FFD7C00867722 /* AllUsersReponse.swift */,
+				499D2E012A3B1A97004431AB /* AuthenticationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,6 +633,7 @@
 				5DE554B02670A27F0025B081 /* AudioDailingView.xib in Resources */,
 				5D09E061266FFC4700867722 /* Manrope-ExtraBold.ttf in Resources */,
 				5D09E059266FFC4700867722 /* Inter-Bold.ttf in Resources */,
+				499D2E0B2A3B204E004431AB /* QRScanner.storyboard in Resources */,
 				5D09E056266FFC4700867722 /* Inter-Medium.ttf in Resources */,
 				5D09E067266FFC4700867722 /* Poppins-BoldItalic.ttf in Resources */,
 				5D09E06F266FFC4700867722 /* Poppins-SemiBold.ttf in Resources */,
@@ -673,6 +700,7 @@
 				5DBBF789266FC26E0086ED93 /* ObjectTranslation.swift in Sources */,
 				5DE554AB2670A2560025B081 /* CallingViewController.swift in Sources */,
 				5DBBF765266FC05E0086ED93 /* LoginViewModel.swift in Sources */,
+				499D2E0A2A3B204E004431AB /* QRScannerViewController.swift in Sources */,
 				5D09E00D266FC86400867722 /* SignupService.swift in Sources */,
 				18D01BC6268496E000DE549A /* Swift+Extensions.swift in Sources */,
 				5DBBF72F266FBFA90086ED93 /* ViewController.swift in Sources */,
@@ -698,14 +726,18 @@
 				49F12F032A11FB34008E8552 /* VdotokShare.swift in Sources */,
 				5D09E010266FC88B00867722 /* SignupRequest.swift in Sources */,
 				5D09E082266FFE0F00867722 /* AllUserRequest.swift in Sources */,
+				499D2E022A3B1A97004431AB /* AuthenticationModel.swift in Sources */,
+				499D2E0C2A3B204E004431AB /* QRScannerRouter.swift in Sources */,
 				5DBBF762266FC05E0086ED93 /* LoginRouter.swift in Sources */,
 				5D09E031266FFB9600867722 /* YellowButton.swift in Sources */,
 				5D09E079266FFD1700867722 /* ContactViewController.swift in Sources */,
 				5DBBF774266FC18D0086ED93 /* ApiRequest.swift in Sources */,
 				5DBBF75A266FC0530086ED93 /* SignUpViewModel.swift in Sources */,
 				5DBBF784266FC23B0086ED93 /* UserResponse.swift in Sources */,
+				499D2E0D2A3B204E004431AB /* QRScannerViewModel.swift in Sources */,
 				5D09E016266FC92900867722 /* AuthenticationService.swift in Sources */,
 				5D09E078266FFD1700867722 /* ContactRouter.swift in Sources */,
+				499D2E092A3B204E004431AB /* QRScannerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
