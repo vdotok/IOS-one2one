@@ -55,7 +55,6 @@ extension APIRequest {
     
     private func getBaseUrl() -> URL {
         let fakeUrl = URL(fileURLWithPath: "")
-        print("baaaaaaa====\(AuthenticationConstants.TENANTSERVER)")
         guard let baseUrl = URL(string: AuthenticationConstants.TENANTSERVER),
               let component = URLComponents(url: baseUrl.appendingPathComponent(getPath()), resolvingAgainstBaseURL: false), let url = component.url else {
 
