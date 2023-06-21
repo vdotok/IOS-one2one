@@ -17,8 +17,8 @@ struct Constants {
 }
 
 struct AuthenticationConstants {
-    static let TENANTSERVER = ""
-    static let PROJECTID = ""
+    static var TENANTSERVER = ""
+    static var PROJECTID = ""
 }
 
 class Common {

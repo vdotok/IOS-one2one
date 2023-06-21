@@ -33,7 +33,11 @@ public class SignUpViewController: UIViewController {
     
     @IBAction func didTapRegister(_ sender: UIButton) {
         guard let userName = userName.text, let password = password.text, let email = email.text else { return }
-        viewModel.registerUser(with: userName, password, email)
+        if (AuthenticationConstants.PROJECTID.isEmpty && AuthenticationConstants.TENANTSERVER.isEmpty) {
+            ProgressHud.showError(message: "kindly scan the qr code / Enter Credientials of Project", viewController: self)
+        }else{
+            viewModel.registerUser(with: userName, password, email)
+        }
 
     }
     

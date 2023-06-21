@@ -47,6 +47,10 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
     }
     
     func viewModelDidLoad() {
+        if AuthenticationConstants.TENANTSERVER.isEmpty && AuthenticationConstants.PROJECTID.isEmpty {
+            AuthenticationConstants.TENANTSERVER = UserDefaults.baseUrl
+            AuthenticationConstants.PROJECTID = UserDefaults.projectId
+        }
         getUsers()
         configureVdotTok()
         AVCaptureDevice.requestAccess(for: .video) { _ in}
@@ -153,6 +157,8 @@ extension ContactViewModelImpl {
 }
 
 extension ContactViewModelImpl: SDKConnectionDelegate {
+    
+    func initReInvite() {}
     
     func didGenerate(output: SDKOutPut) {
         switch output {
