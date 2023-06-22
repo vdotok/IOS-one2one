@@ -45,7 +45,7 @@ If command is not found then you don’t have Cocoapods installed on your system
 *  Double-click to open **.xcworkspace file** in Xcode
 
  **Ways To Add Project ID and Tenant Server**
-*  In struct AuthenticationConstants **(iOS-one2one -> common -> constants)**, replace the values for **PROJECTID** and **TENANTSERVER** with your values
+*  In struct AuthenticationConstants **(One-to-one-call-demo -> common -> constants)**,replace the values for **PROJECTID** and **TENANTSERVER** with your values
 *  You can use the QR code scanner provided on the Login and Signup screens once you have **BUILD** the application on your device.
 
 ### Building On Device
