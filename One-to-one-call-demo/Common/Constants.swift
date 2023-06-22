@@ -17,8 +17,8 @@ struct Constants {
 }
 
 struct AuthenticationConstants {
-    static var TENANTSERVER = ""
-    static var PROJECTID = ""
+    static var TENANTSERVER = "https://q-tenant.vdotok.dev/API/v0/"
+    static var PROJECTID = "24CJTUD"
 }
 
 class Common {
