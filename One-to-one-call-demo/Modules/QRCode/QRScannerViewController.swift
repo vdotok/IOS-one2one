@@ -17,6 +17,12 @@ public class QRScannerViewController: UIViewController, AVCaptureMetadataOutputO
 
     var viewModel: QRScannerViewModel!
     
+    
+    @IBAction func didTapBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         configureAppearance()
@@ -31,6 +37,8 @@ public class QRScannerViewController: UIViewController, AVCaptureMetadataOutputO
                   captureSession.startRunning()
               }
     }
+    
+    
     
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
