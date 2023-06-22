@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,22 +27,37 @@
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan to get Vdotok project id and base url " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHV-Nu-vFN">
-                                <rect key="frame" x="24" y="145" width="366" height="66"/>
+                                <rect key="frame" x="24" y="159" width="366" height="52"/>
                                 <fontDescription key="fontDescription" name="Manrope-Medium" family="Manrope" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIg-JG-Wb9">
+                                <rect key="frame" x="10" y="68" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="6pX-RB-uqx"/>
+                                    <constraint firstAttribute="height" constant="50" id="RIw-qm-vDL"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrow.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapBack:" destination="yNj-G0-2LL" eventType="touchUpInside" id="JtA-k7-iRA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XcF-7s-VQe"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZHV-Nu-vFN" firstAttribute="top" secondItem="qIg-JG-Wb9" secondAttribute="bottom" constant="41" id="8Jx-Um-dYi"/>
                             <constraint firstItem="jDZ-KC-nJG" firstAttribute="top" secondItem="ZHV-Nu-vFN" secondAttribute="bottom" constant="20" id="G5W-RG-F6p"/>
                             <constraint firstItem="jDZ-KC-nJG" firstAttribute="centerX" secondItem="XcF-7s-VQe" secondAttribute="centerX" id="Ra2-Bw-mA7"/>
+                            <constraint firstItem="qIg-JG-Wb9" firstAttribute="leading" secondItem="XcF-7s-VQe" secondAttribute="leading" constant="10" id="TjE-PV-VgP"/>
                             <constraint firstItem="ZHV-Nu-vFN" firstAttribute="centerX" secondItem="jDZ-KC-nJG" secondAttribute="centerX" id="U8i-No-Uih"/>
                             <constraint firstItem="jDZ-KC-nJG" firstAttribute="centerY" secondItem="XcF-7s-VQe" secondAttribute="centerY" id="V4B-IL-9ux"/>
                             <constraint firstItem="jDZ-KC-nJG" firstAttribute="height" secondItem="E8v-Hc-GEB" secondAttribute="height" multiplier="0.5" id="dAS-qh-sVH"/>
                             <constraint firstItem="XcF-7s-VQe" firstAttribute="leading" secondItem="ZHV-Nu-vFN" secondAttribute="leading" constant="-24" id="hLD-Fd-EJt"/>
                             <constraint firstItem="XcF-7s-VQe" firstAttribute="trailing" secondItem="jDZ-KC-nJG" secondAttribute="trailing" id="jpB-xT-6la"/>
+                            <constraint firstItem="qIg-JG-Wb9" firstAttribute="top" secondItem="XcF-7s-VQe" secondAttribute="top" constant="20" id="z4X-oQ-alj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -55,6 +70,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
