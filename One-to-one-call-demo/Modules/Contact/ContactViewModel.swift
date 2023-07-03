@@ -47,8 +47,11 @@ class ContactViewModelImpl: ContactViewModel, ContactViewModelInput {
     }
     
     func viewModelDidLoad() {
-        if AuthenticationConstants.TENANTSERVER.isEmpty && AuthenticationConstants.PROJECTID.isEmpty {
-            AuthenticationConstants.TENANTSERVER = UserDefaults.baseUrl
+        if (!AuthenticationConstants.TENANTSERVER.isEmpty && !AuthenticationConstants.PROJECTID.isEmpty) {
+             UserDefaults.baseUrl = AuthenticationConstants.TENANTSERVER
+             UserDefaults.projectId = AuthenticationConstants.PROJECTID
+          } else {
+            AuthenticationConstants.TENANTSERVER =  UserDefaults.baseUrl
             AuthenticationConstants.PROJECTID = UserDefaults.projectId
         }
         getUsers()
@@ -197,6 +200,8 @@ extension ContactViewModelImpl {
     
     func closeConnection() {
         vtokSdk?.closeConnection()
+        UserDefaults.standard.removeObject(forKey: "projectId")
+        UserDefaults.standard.removeObject(forKey: "baseUrl")
     }
 }
 
