@@ -53,7 +53,7 @@ If command is not found then you don’t have Cocoapods installed on your system
 
 To run on a real device:
 
-<img width="500" alt="Screenshot 2022-08-24 at 12 39 21 PM" src="https://user-images.githubusercontent.com/111276411/186361499-0a93fc75-db9b-4eaa-bb9a-2f14556b1051.png">
+<img width="1160" alt="Screenshot 2023-08-08 at 1 56 28 PM" src="https://github.com/vdotok/IOS-one2one/assets/121437187/e98a3987-4dca-4ff1-8d83-95aee569f231">
 
   * Go to your **Main Target->Signing and Capabilities**
   * Select your Team and setup your bundle identifier like `com.company.appname`
@@ -62,3 +62,4 @@ To run on a real device:
   * Click on play button on xcode toolbar
 
 For details on how to run application on a real device, please [click here](https://codewithchris.com/deploy-your-app-on-an-iphone/) to follow instructions. 
+
