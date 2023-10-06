@@ -324,7 +324,7 @@ extension CallingViewModelImpl {
     }
     
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "iphone_11_pro", withExtension: "mp3") else {
+        guard let url = Bundle.main.url(forResource: "iphone_ringtone", withExtension: "mp3") else {
             print("url not found")
             return
         }
